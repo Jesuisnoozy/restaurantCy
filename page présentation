@@ -1,0 +1,62 @@
+<!DOCTYPE html> 
+<html lang="fr">
+<head>
+	<meta charset="#EE7000">
+	<title> Le Goupix - Nos Plats</title>
+	<link rel="stylesheet"
+	href="style.css">
+</head>
+
+<body>
+<header>
+	<h1>Le Goupix 🌮</h1>
+	<p> Découvrez nos spécialités mexicaines</p>
+</header>
+
+<main class="presentation">
+	<section class="barre de recherche">
+	 	<input type="text"
+	 	placeholder="Rechercher un plat...">
+ 	</section>
+ 	
+	<nav class="filtrer">
+	   <ul>
+		<li><a href="#">Tous</a></li>
+		<li><a href="#">Tacos</a></li>
+		<li><a href="#">Burritos</a></li>
+		<li><a href="#">Quesadillas</a></li>
+		<li><a href="#">Boissons</a></li>
+		<li><a href="#">Desserts</a></li>
+	   </ul>
+	</nav>
+	
+	<section class="produits">
+		<article class="ingrédients">
+		
+			<h2>Tacos del cochon</h2>
+			<p> Porc mariné, ananas, coriandre, oignons.</p>
+			<span class="prix">8.50€</span>
+		</article>
+		
+		<article class="ingrédients">
+		
+			<h2>Burritos del pouletos</h2>
+			<p> Poulet épicé, riz, haricots rouges, fromage.</p>
+			<span class="prix">10.90€</span>
+		</article>
+		
+		<article class="ingrédients">
+		
+			<h2>Quesadillas fromage</h2>
+			<p> Tortilla de blé, riz, haricots rouges, fromage fondant.</p>
+			<span class="prix">7.00€</span>
+		</article>
+	</section>
+</main>
+
+<footer>
+	<p>2026 - Le Goupix</p>
+</footer>
+
+</body>
+</html>
