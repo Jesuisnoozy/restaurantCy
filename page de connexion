@@ -8,7 +8,9 @@
 </head>
 
 <body>
-
+	<div class="connexion">
+	<h1>Le Goupix 🌮</h1>
+	<p class="subtitle"> Connexion à votre espace</p>
 
 <footer>
 	<p>2026 - Le Goupix</p>
