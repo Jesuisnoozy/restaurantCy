@@ -1,11 +1,13 @@
 header {
-    background-color: #FF2c00;
-    padding: 18px 40px;
+    background-color: #EE7000;
+    padding: 80px 40px;
     position: sticky;
     top: 0;
     z-index: 100;
+    font-style: italic;
+    width: 100%;           /* Ajouté */
+    box-sizing: border-box; /* Ajouté - pour que le padding soit inclus dans la largeur */
 }
-
 
 .bouton {
     display: inline-block;
@@ -14,4 +16,57 @@ header {
     font-size: 0.95rem;
     cursor: pointer;
     border: none;
+}
+
+h1 {
+    padding:0;              /* Modifié : enlève tout le padding */
+    color: black;
+    font-size: 2rem;
+    text-align: center;              /* Garde margin à 0 */
+    width: 100%;
+    display: flex;           /* Ajouté */
+    align-items: center;     /* Ajouté */
+    justify-content: center; /* Ajouté */
+}
+nav a {
+    flex: 1;
+    color: #ffffff;
+    font-size: 2rem;
+    padding: 8px 8px;
+    height: 75px;
+    background-color: #4F4B40;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav { 
+    display:flex;
+    }
+
+* { 
+ font-family:cursive;
+}
+
+.hero-boutons {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.suis {
+text-align:center;
+font-size: 2rem;
+}
+.bordure { 
+  margin-top:-0px;
+  margin-bottom:-18px;
+}
+.borduree {
+  margin-bottom:-80px;
+  margin-left:-40px;
+  margin-right:-40px;
 }
