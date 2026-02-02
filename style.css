@@ -1,0 +1,17 @@
+header {
+    background-color: #FF2c00;
+    padding: 18px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+
+.bouton {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    border: none;
+}
