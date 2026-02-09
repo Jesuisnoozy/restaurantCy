@@ -16,17 +16,19 @@
 	
 <main class="presentation">
 	<section class="barre-de-recherche">
-		<form action="presentation.html" method="get">
 	 	<input type="text" placeholder="Rechercher un plat...">
-	 	<button type="submit"> Rechercher</button>
-	 	</form>
  	</section>
  	
  	<nav class="filters">
-		<a href="presentation.html">Tous</a>
-		<a href="plats.html">Plats</a>
-		<a href="desserts.html">Desserts</a>
-		<a href="boissons.html">Boissons</a>
+ 		<input type="radio" name="filter" id="all" checked>
+		<label for="all">Tous</label>
+		<input type="radio" name="filter" id="plats">
+		<label for="plats">Plats</label>
+		<input type="radio" name="filter" id="desserts">
+		<label for="desserts">Desserts</label>
+		<input type="radio" name="filter" id="boissons">
+		<label for="boissons">Boissons</label>
+		
 	</nav>
 
 	
