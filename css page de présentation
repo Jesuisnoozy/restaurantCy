@@ -4,7 +4,8 @@ body {
 	background-color:#000000;
 	color: white;
 }
-header{
+
+header {
 	background-color:#EE7000;
 	color: white;
 	text-align: center;
@@ -15,34 +16,54 @@ header{
 	text-align: center;
 	margin: 20px;
 }
+
 .barre-de-recherche input {
 	padding: 10px;
 	width: 60%;
-	border-radius: 5px;
-	border: 1px solid black;
 }
-.filtrer ul{
+
+.filters {
 	display: flex;
 	justify-content: center;
-	padding: 0;
-	gap: 15px;
+	margin-bottom: 30px;
 }
-.filtrer a{
-	color: white;
-	font-weight: bold;
+
+.filters label {
+	padding: 10px 15px;
+	border: 2px solid;
+	cursor: pointer;
+	border-radius: 5px;
 }
 
 .produits {
+	display: grid;
 	padding: 20px;
 }
-.ingrédients {
-	background color: white;
-	border-radius: 10px;
-	padding: 15px;
+
+.prix {
+	font-weight: bold;
 }
-.prix{
-	front-weight: bold;
+
+.produits article {
+	display: none;
 }
+
+#all:checked ~ .produits article {
+	display: block;
+}
+
+#plats:checked ~ .produits article.plats {
+	display: block;
+}
+
+#desserts:checked ~ .produits article.desserts {
+	display: block;
+}
+
+#boissons:checked ~ .produits article.boissons {
+	display: block;
+}
+
 footer {
 	text-align: center;
 	padding: 15px;
