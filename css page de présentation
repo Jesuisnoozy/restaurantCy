@@ -11,7 +11,6 @@ header {
 	text-align: center;
 	padding: 20px;
 }
-
 .barre-de-recherche {
 	text-align: center;
 	margin: 20px;
@@ -44,27 +43,11 @@ header {
 	font-weight: bold;
 }
 
-.produits article {
-	display: none;
-}
-
-#all:checked ~ .produits article {
-	display: block;
-}
-
-#plats:checked ~ .produits article.plats {
-	display: block;
-}
-
-#desserts:checked ~ .produits article.desserts {
-	display: block;
-}
-
-#boissons:checked ~ .produits article.boissons {
-	display: block;
-}
 
 footer {
 	text-align: center;
+	padding: 15px;
+}
+
 	padding: 15px;
 }
