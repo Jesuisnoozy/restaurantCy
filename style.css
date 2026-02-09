@@ -5,36 +5,40 @@ header {
     top: 0;
     z-index: 100;
     font-style: italic;
-    width: 100%;           /* Ajouté */
-    box-sizing: border-box; /* Ajouté - pour que le padding soit inclus dans la largeur */
+    width: 100%;           
+    box-sizing: border-box; 
 }
 
 .bouton {
     display: inline-block;
-    padding: 12px 30px;
+    padding: 20px 0px;
     border-radius: 4px;
-    font-size: 0.95rem;
+    font-size: 1.95rem;
     cursor: pointer;
     border: none;
 }
 
 h1 {
-    padding:0;              /* Modifié : enlève tout le padding */
+    padding:0;              
     color: black;
     font-size: 2rem;
-    text-align: center;              /* Garde margin à 0 */
+    text-align: center;	
+    margin:0;              
     width: 100%;
-    display: flex;           /* Ajouté */
-    align-items: center;     /* Ajouté */
-    justify-content: center; /* Ajouté */
+    display: flex;           
+    align-items: center;     
+    justify-content: center; 
+    background-color: #4F4B40;
+    height: 100px;
+    
 }
 nav a {
     flex: 1;
     color: #ffffff;
     font-size: 2rem;
-    padding: 8px 8px;
-    height: 75px;
-    background-color: #4F4B40;
+    padding: 0px 0px;
+    height: 50px;
+    background-color: #EE7000;
     text-align: center;
     margin: auto;
     display: flex;
@@ -55,18 +59,29 @@ nav {
     justify-content: center;
     gap: 32px;
     flex-wrap: wrap;
+    background-color: #4F4B40;
 }
 
 .suis {
 text-align:center;
 font-size: 2rem;
+flex-flow:row;
 }
-.bordure { 
-  margin-top:-0px;
-  margin-bottom:-18px;
+
+.suisse {
+text-align:center;
 }
-.borduree {
-  margin-bottom:-80px;
-  margin-left:-40px;
-  margin-right:-40px;
+
+.imgtexte {
+float: left;
+margin: 0;
+}
+
+body {
+background-color: #4F4B40
+}
+.center {
+flex: 1;
+flex-flow:row;
+}
 }
