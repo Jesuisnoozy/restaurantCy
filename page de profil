@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+<html lang="fr">
+<head>
+	<meta charset="#UTF-8">
+	<title> Le Goupix - Profil</title>
+	<link rel="stylesheet"
+	href="style.css">
+</head>
+
+<body>
+<header>
+	<h1>Le Goupix 🌮</h1>
+	<p> Page de profil</p>
+</header>
+
+	
+<h1> Mon Profil</h1>
+<section>
+	<h2>Informations personelles</h2>
+	<div>
+		<label>Nom:</label>
+		<input type="checkbox" id="nom">
+	</div>
+	<div>
+		<label>Prénom:</label>
+		<input type="checkbox" id="prenom";
+	</div>
+	<div>
+		<label>Email</label>
+		<input type="checkbox" id="email">
+	</div>
+</section>
+
+
+
+<footer>
+	<p>2026 - Le Goupix</p>
+</footer>
+
+</body>
+</html>
