@@ -1,13 +1,18 @@
 <!DOCTYPE html> 
 <html lang="fr">
 <head>
-	<meta charset="#EE7000">
-	<title> Connexion - Le Goupix</title>
+	<meta charset="#UTF-8">
+	<title> Le Goupix - Connexion</title>
 	<link rel="stylesheet"
 	href="style.css">
 </head>
+</head>
 
 <body>
+<header>
+	<h1>Le Goupix 🌮</h1>
+	<p> Page de connexion</p>
+</header>
 	<div class="connexion">
 	<h1>Le Goupix 🌮</h1>
 	<p class="subtitle"> Connexion à votre espace</p>
@@ -18,8 +23,10 @@
 		<label for="passeword">Mot de passe</label>
 		<input type="passeword" id="passeword" placeholder="*********" required>
 		
-		<button type="submit"> Se connecter</button>
+		<button type="soumettre"> Se connecter</button>
 	</form>
+	
+	<p class="creer"> Pas encore de compte? <a href="#"> Créer un compte</a></p>
 
 </div>
 
