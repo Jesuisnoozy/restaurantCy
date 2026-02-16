@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Évaluer votre commande</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Évaluation de votre commande</h1>
+    
+    <header>
+        <nav>
+            <a href="#">Accueil</a>
+            <a href="#">Mes commandes</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container-avis">
+        <form action="#" method="POST">
+            
+            <!-- Section notation du livreur -->
+            <div class="section-avis">
+                <h2>⭐ Notez votre livreur</h2>
+                <div class="notation-etoiles" id="notation-etoiles">
+                    <span class="etoile" data-note="1">★</span>
+                    <span class="etoile" data-note="2">★</span>
+                    <span class="etoile" data-note="3">★</span>
+                    <span class="etoile" data-note="4">★</span>
+                    <span class="etoile" data-note="5">★</span>
+                </div>
+                <input type="hidden" name="note_livreur" id="note_livreur" value="0">
+                <p class="note-selectionnee" id="texte-note">Cliquez sur les étoiles pour noter</p>
+            </div>
+
+            <!-- Section avis sur le livreur -->
+            <div class="section-avis">
+                <h2>💬 Votre avis sur le livreur</h2>
+                <label for="avis_livreur">Partagez votre expérience avec le livreur :</label>
+                <textarea 
+                    id="avis_livreur" 
+                    name="avis_livreur" 
+                    placeholder="Dites-nous comment s'est passée la livraison..."
+                    required></textarea>
+            </div>
+
+            <!-- Section améliorations -->
+            <div class="section-avis">
+                <h2>💡 Suggestions d'amélioration</h2>
+                <label for="ameliorations">Comment pourrions-nous améliorer notre service ?</label>
+                <textarea 
+                    id="ameliorations" 
+                    name="ameliorations" 
+                    placeholder="Vos suggestions sont précieuses pour nous améliorer..."></textarea>
+            </div>
+
+            <!-- Section recommandation -->
+            <div class="section-avis">
+                <h2>✅ Recommanderiez-vous notre service ?</h2>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="recommande_oui" name="recommandation" value="oui" required>
+                        <label for="recommande_oui" style="margin: 0;">Oui, absolument !</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="recommande_non" name="recommandation" value="non">
+                        <label for="recommande_non" style="margin: 0;">Non, pas vraiment</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bouton de soumission -->
+            <button type="submit" class="bouton-soumettre">Envoyer mon avis</button>
+        </form>
+    </div>
+
+</body>
+</html>
