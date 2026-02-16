@@ -31,7 +31,39 @@
 	</div>
 </section>
 
+<section>
+	<h2>Mes Commandes</h2>
+	
+	<table>
+		<tr>
+		   <th>Numéro</th>
+		   <th>Date</th>
+		   <th>Montant</th>
+		   <th>Statut</th>
+		</tr>
+		
+		
+		<tr>
+		   <td>#150</td>
+		   <td>12/02/2025</td>
+		   <td>35.50€</td>
+		   <td>Livrée</td>
+		</tr>
+		
+		<tr>
+		   <td>151</td>
+		   <td>20/02/2025</td>
+		   <td>45.50</td>
+		   <td>En cours</td>
+		</tr>
+	</table>  
+</section>
 
+<section>
+	<h2>Compte Fidélité</h2>
+	<p>Points actuels:<strong>220pts</strong></p>
+	<p>Prochaine récompense: -5€ sur la commandesà 250pts</p>
+</section>
 
 <footer>
 	<p>2026 - Le Goupix</p>
