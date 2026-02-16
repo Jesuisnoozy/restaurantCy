@@ -25,37 +25,35 @@
 </header>
 <!-- Content -->
 <main class="main">
-	<p>c</p>
-	<p>c</p>
-	<p>c</p>
-	<p>c</p>
-	<p>c</p>
-	<p>c</p>
-	<p>c</p>
-	<p>c</p>
-	<p>c</p>
-	<p>c</p>
-	<p>c</p>
-	<p>c</p>
-	<p>c</p>
-	<p>c</p>
-	<p>c</p>
-	<p>c</p>
-	<p>c</p>
-	<p>c</p>
-	<p>c</p>
-	<p>c</p>
-	<p>c</p>
-	<p>c</p>
-	<p>c</p>
-	<p>c</p>
-	<p>c</p>
-	<p>c</p>
-	<p>c</p>
+	<p class="text">C</p>
+	<p class="text">C</p>
+	<p class="text">C</p>
+	<p class="text">C</p>
+	<p class="text">C</p>
+	<p class="text">C</p>
+	<p class="text">C</p>
+	<p class="text">C</p>
+	<p class="text">C</p>
+	<p class="text">C</p>
+	<p class="text">C</p>
+	<p class="text">C</p>
+	<p class="text">C</p>
+	<p class="text">C</p>
+	<p class="text">C</p>
+	<p class="text">C</p>
+	<p class="text">C</p>
+	<p class="text">C</p>
+	<p class="text">C</p>
+	<p class="text">C</p>
+	<p class="text">C</p>
+	<p class="text">C</p>
+	<p class="text">C</p>
+	<p class="text">C</p>
+	<p class="text">C</p>
 </main>
 
 <footer>
-	<p>2026 - Le Goupix</p>
+	<p class="text">2026 - Le Goupix</p>
 </footer>
 
 </body>
