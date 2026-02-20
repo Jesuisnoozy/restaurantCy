@@ -129,7 +129,7 @@ nav {
 	text-align: left;
 }
 
-.profil-section {
+.profil {
 	background-color: white;
 	padding: 30px;
 	width: 70%;
