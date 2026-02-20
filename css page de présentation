@@ -6,7 +6,6 @@ body {
     margin: 0;
 }
 
-}
 .center {
 	flex: 1;
 	flex-flow:row;
@@ -128,6 +127,63 @@ nav {
 	display: flex;
 	flex-direction: column;
 	text-align: left;
+}
+
+.profil-section {
+	background-color: white;
+	padding: 30px;
+	width: 70%;
+	border-radius: 10px;
+	margin-top: 30px;
+}
+
+.info {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 15px;
+}
+
+.info label {
+	width: 20%;
+	font-weight: bold;
+}
+
+.info input {
+	width: 60%;
+	padding: 8px;
+}
+
+.modifier {
+	background-color: #EE7000;
+	border: none;
+	padding: 8px 12px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.fidelite {
+	background-color: white;
+	padding: 30px;
+	width: 70%;
+	border-radius: 10px;
+	margin-top: 30px;
+	text-align: center;
+}
+
+.progress-bar {
+	width: 100%;
+	background-color: #ddd;
+	height: 20px;
+	border-radius: 10px;
+	margin: 10px 0;
+}
+
+.progress {
+	width: 88%;
+	height: 100%;
+	background-color:#EE7000;
+	border-radius: 10px;
 }
 
 footer {
