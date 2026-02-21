@@ -15,106 +15,101 @@
 
 	
 <main class="presentation">
-	<section class="barre-de-recherche">
-	 	<input type="text" placeholder="Rechercher un plat...">
- 	</section>
- 	
- 	<nav class="filters">
- 		<input type="radio" name="filter" id="all" checked>
-		<label for="all">Tous</label>
-		<input type="radio" name="filter" id="plats">
-		<label for="plats">Plats</label>
-		<input type="radio" name="filter" id="desserts">
-		<label for="desserts">Desserts</label>
-		<input type="radio" name="filter" id="boissons">
-		<label for="boissons">Boissons</label>
+		<section class="barre-de-recherche">
+			<input type="text" placeholder="Rechercher un plat...">
+		</section>
 		
-	</nav>
+		<nav class="filters">
+			<input type="radio" name="filter" id="all" checked>
+			<label for="all">Tous</label>
+			<input type="radio" name="filter" id="plats">
+			<label for="plats">Plats</label>
+			<input type="radio" name="filter" id="desserts">
+			<label for="desserts">Desserts</label>
+			<input type="radio" name="filter" id="boissons">
+			<label for="boissons">Boissons</label>
+		</nav>
+		
+		<div class="menu">
+			<h2 class="categorie">🌮 Plats</h2>
+			<section class="produits">
+				<article>
+					<h2>Tacos del cochono</h2>
+					<p>Porc mariné, ananas, coriandre, oignons.</p>
+					<span class="prix">8.50€</span>
+				</article>
+				
+				<article>
+					<h2>Burritos de pouleto</h2>
+					<p>Poulet épicé, riz, haricots rouges, fromage.</p>
+					<span class="prix">10.90€</span>
+				</article>
+				
+				<article>
+					<h2>Quesadillas queso</h2>
+					<p>Tortilla de blé, riz, haricots rouges, fromage fondant.</p>
+					<span class="prix">7.00€</span>
+				</article>
+			</section>
 
-	
-	<section class="produits">
-		<article class="ingredients">
-		
-			<h2>Tacos del cochono</h2>
-			<p> Porc mariné, ananas, coriandre, oignons.</p>
-			<span class="prix">8.50€</span>
-		</article>
-		
-		<article class="ingrédients">
-		
-			<h2>Burritos de pouleto</h2>
-			<p> Poulet épicé, riz, haricots rouges, fromage.</p>
-			<span class="prix">10.90€</span>
-		</article>
-		
-		<article class="ingrédients">
-		
-			<h2>Quesadillas queso</h2>
-			<p> Tortilla de blé, riz, haricots rouges, fromage fondant.</p>
-			<span class="prix">7.00€</span>
-		</article>
-		
-		<article class="ingrédients">
-		
-			<h2>Donuts Churro Loco</h2>
-			<p> Glaçage :sucre et cannelle.</p>
-			<span class="prix">3.00€</span>
-		</article>
-		
-		<article class="ingrédients">
-		
-			<h2>Donuts La Abuela</h2>
-			<p> Glaçage :cajeta et fleur de sel.</p>
-			<span class="prix">3.20€</span>
-		</article>
-		
-		<article class="ingrédients">
-		
-			<h2>Donuts Fuego Cacao</h2>
-			<p> Glaçage :chocolat noir et piment ancho.</p>
-			<span class="prix">3.50€</span>
-		</article>
-		
-		<article class="ingrédients">
-		
-			<h2>Donuts Verde Limón</h2>
-			<p> Glaçage :citron vert, zeste et piment.</p>
-			<span class="prix">3.50€</span>
-		</article>
-		
-		<article class="ingrédients">
-		
-			<h2>Agua de Jamaica</h2>
-			<p> eau et sirop d'hibiscus.</p>
-			<span class="prix">3.00€</span>
-		</article>
-		
-		<article class="ingrédients">
-		
-			<h2>Piña Brava</h2>
-			<p> jus d'ananas, gingembre, pointe de piment.</p>
-			<span class="prix">3.50€</span>
-		</article>
-		
-		<article class="ingrédients">
-		
-			<h2>La Clásica Margarita</h2>
-			<p> Tequila, triple sec et jus de citron vert.</p>
-			<span class="prix">5.50€</span>
-		</article>
-		
-		<article class="ingrédients">
-		
-			<h2>Chocolate Caliente</h2>
-			<p> chocolat noir fondu, lait et pointe de piment.</p>
-			<span class="prix">3.50€</span>
-		</article>
-	</section>
-</main>
+			<h2 class="categorie">🍩 Desserts</h2>
+			<section class="produits">
+				<article>
+					<h2>Donuts Churro Loco</h2>
+					<p>Glaçage : sucre et cannelle.</p>
+					<span class="prix">3.00€</span>
+				</article>
+				
+				<article>
+					<h2>Donuts La Abuela</h2>
+					<p>Glaçage : cajeta et fleur de sel.</p>
+					<span class="prix">3.20€</span>
+				</article>
+				
+				<article>
+					<h2>Donuts Fuego Cacao</h2>
+					<p>Glaçage : chocolat noir et piment ancho.</p>
+					<span class="prix">3.50€</span>
+				</article>
+				
+				<article>
+					<h2>Donuts Verde Limón</h2>
+					<p>Glaçage : citron vert, zeste et piment.</p>
+					<span class="prix">3.50€</span>
+				</article>
+			</section>
 
-<footer>
-	<p>2026 - Le Goupix</p>
-</footer>
+			<h2 class="categorie">🍹 Boissons</h2>
+			<section class="produits">
+				<article>
+					<h2>Agua de Jamaica</h2>
+					<p>Eau et sirop d'hibiscus.</p>
+					<span class="prix">3.00€</span>
+				</article>
+				
+				<article>
+					<h2>Piña Brava</h2>
+					<p>Jus d'ananas, gingembre, pointe de piment.</p>
+					<span class="prix">3.50€</span>
+				</article>
+				
+				<article>
+					<h2>La Clásica Margarita</h2>
+					<p>Tequila, triple sec et jus de citron vert.</p>
+					<span class="prix">5.50€</span>
+				</article>
+				
+				<article>
+					<h2>Chocolate Caliente</h2>
+					<p>Chocolat noir fondu, lait et pointe de piment.</p>
+					<span class="prix">3.50€</span>
+				</article>
+			</section>
+		</div>
+	</main>
 
+	<footer>
+		<p>2026 - Le Goupix</p>
+	</footer>
 </body>
 </html>
