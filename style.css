@@ -1,3 +1,21 @@
+/* font imported */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+:root {
+	--header-outer-height: 110px;
+	--header-inner-height: 70px;
+	--header-height-difference: calc(
+		var(--header-outer-height) - var(--header-inner-height)
+	);
+	--header-bg: #fff;
+}
+
 header {
     background-color: #EE7000;
     padding: 80px 40px;
@@ -84,4 +102,262 @@ background-color: #4F4B40
 flex: 1;
 flex-flow:row;
 }
+
+
+/*-------------------*/
+
+
+.responsive-wrapper1 {
+	width: 90%;
+	max-width: 350px;
+	margin-left: 30px;
+	margin-right: auto;
 }
+
+.responsive-wrapper2 {
+	width: 90%;
+	max-width: 600px;
+	margin-left: 330px;
+	margin-right: auto;
+}
+
+/* Sticky header */
+.header-outer {
+	/* Make it stick */
+	height: var(--header-outer-height);
+	position: sticky;
+	top: calc(
+		var(--header-height-difference) * -1
+	); /* Multiply by -1 to get a negative value */
+	display: flex;
+	align-items: center;
+
+	/* Other */
+	background-color: #ee5f32;
+	background: linear-gradient(0deg, #ee5f32, 60%, #feaa7b);
+	box-shadow: 0 2px 10px 0 rgb(255,0,0);
+	border-radius: 30px;
+}
+
+.header-inner {
+	/* Make it stick */
+	height: var(--header-inner-height);
+	position: sticky;
+	top: 0;
+
+	/* Other */
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+/* Styling of other elements */
+.header-logo img {
+    display: flex;
+	height: calc(var(--header-inner-height) - 10px);
+	border-radius: 5px;
+}
+
+.header-navigation {
+	display: flex;
+	flex-wrap: wrap;
+    height: calc(var(--header-inner-height) - 30px);
+}
+
+.header-navigation button {
+	font-size: 2rem;
+	color: inherit;
+	margin-left: 1.75rem;
+	position: relative;
+	font-weight: 500;
+}
+.header-title {
+    font-family: "DM Sans", sans-serif;
+    font-size: 3rem;
+}
+
+.header-navigation button {
+	border: 0;
+	background-color: transparent;
+	padding: 0;
+}
+
+.header-navigation a:hover:after,
+.header-navigation button:hover:after {
+	transform: scalex(1);
+}
+
+.header-navigation a:after,
+
+.header-navigation button:after {
+	transition: 0.25s ease;
+	content: "";
+	display: block;
+	width: 100%;
+	height: 2px;
+	background-color: currentcolor;
+	transform: scalex(0);
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+}
+
+.order {
+ --background: linear-gradient(to left, #ea5358 0%, #f7ba2b 100%);
+ width: 1900px;
+ height: 90px;
+ padding: 5px;
+ border-radius: 1rem;
+ overflow: visible;
+ background: #f7ba2b;
+ background: var(--background);
+ position: relative;
+ z-index: 1;
+}
+
+.order-info {
+ --color: #181818;
+ background: var(--color);
+ color: #ea5358;
+ display: flex;
+ width: 100%;
+ height: 100%;
+ overflow: auto;
+ border-radius: .7rem;
+ -webkit-text-stroke: .2px black;
+}
+
+.order .title {
+ font-weight: bold;
+ letter-spacing: .1em;
+}
+
+/*Hover*/
+.order:hover::after {
+ opacity: 1;
+}
+
+.order:hover .order-info {
+ color: #f7ba2b;
+ transition: color .5s;
+}
+
+/*---Page admin qui est un peu différente, aller sur l'utilisateur sera en phase 2 du projet---*/
+
+.wrapper3 {
+  display: grid;
+  grid-template-columns: 466px 466px 466px 466px;
+  grid-gap: 10px;
+}
+
+
+.order2 {
+ --background: linear-gradient(to left, #ea5358 0%, #f7ba2b 100%);
+ width: 466px;
+ height: 80px;
+ padding: 5px;
+ border-radius: 1rem;
+ overflow: visible;
+ background: #f7ba2b;
+ background: var(--background);
+ position: relative;
+ z-index: 1;
+}
+
+.order2-info {
+ --color: #181818;
+ background: var(--color);
+ color: #ea5358;
+ display: flex;
+ width: 100%;
+ height: 100%;
+ overflow: auto;
+ border-radius: .7rem;
+ -webkit-text-stroke: .2px black;
+}
+
+.order2 .title {
+ font-weight: bold;
+ letter-spacing: .1em;
+}
+
+.order2 .title2 {
+ font-weight: bold;
+ letter-spacing: .1em;
+ color: green;
+}
+
+.order2 .title3 {
+ font-weight: bold;
+ letter-spacing: .1em;
+ color: orange;
+}
+
+/*Hover*/
+.order2:hover::after {
+ opacity: 1;
+}
+
+.order2:hover .order-info {
+ color: #f7ba2b;
+ transition: color .5s;
+}
+/*------*/
+
+.commontxt {
+    margin-left: 5rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+	color: #ea5358;
+	position: relative;
+	font-weight: 500;
+    -webkit-text-stroke: 1px black;
+}
+.commontxt2 {
+    margin-left: 2rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+	color: #ea5358;
+	position: relative;
+	font-weight: 500;
+    -webkit-text-stroke: 1px black;
+}
+
+.button-17 {
+  align-items: center;
+  background-color: #fff;
+  border-radius: 24px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: flex;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: .25px;
+  line-height: normal;
+  max-width: 100%;
+  overflow: visible;
+  padding: 2px 24px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  will-change: transform,opacity;
+  z-index: 0;
+}
+
+.button-17:hover {
+  background: #f7ba2b;
+  color: #000000;
+}
+
+
