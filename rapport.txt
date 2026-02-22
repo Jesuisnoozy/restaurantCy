@@ -1,0 +1,15 @@
+Rapport projet-info-CY
+
+ 
+
+Groupe: Raphael Boutor, Rendy Aoualli, Maëlys Louvrier 
+
+PréIng2-SupMéca 
+
+Répartition du travail:  
+
+Maëlys: Page de présentation, Page de profil, Page de connexion
+Raphael: Page administrateur, Page des commandes, Page de livraison
+Rendy: Page d'accueil,Page d’inscription, Page de notation
+
+
