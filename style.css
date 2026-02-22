@@ -359,5 +359,225 @@ flex-flow:row;
   background: #f7ba2b;
   color: #000000;
 }
+/*age de profil*/
 
+.info {
+	margin-bottom: 15px;
+}
+
+.info label {
+	display: inline;
+	width: 100px;
+}
+
+.info input {
+	padding: 8px;
+	border: 2px solid #EE7000;
+	border-radius: 5px;
+	font-size: 20px;
+}
+
+table {
+	width: 100%;
+	margin-top: 20px;
+}
+
+th {
+	background-color: #EE7000;
+	color: white;
+	padding: 10px;
+	text-align: left;
+}
+
+td {
+	padding: 10px;
+	background-color: #FFF4E6;
+}
+
+.barre-de-progression {
+	width: 100%;
+	background-color: #ddd;
+	height: 25px;
+	border-radius: 10px;
+	margin: 10px 0;
+}
+
+.progression {
+	width: 88%;
+	height: 100%;
+	background-color: #EE7000;
+	border-radius: 10px;
+}
+
+/*page de présentation */
+
+.barre-de-recherche {
+	text-align: center;
+	margin: 40px;
+	width: 600px;
+	margin-left: 25%;
+}
+
+.barre-de-recherche input {
+	width: 90%;
+	padding: 15px 20px;
+	font-size: 20px;
+	border: 3px solid #EE7000;
+	border-radius: 25px;
+	background-color: white;
+	font-family: 'Comic Sans MS';
+	font-style: italic;
+}
+
+.filters {
+	display: flex;
+	justify-content: center;
+	gap: 15px;
+	margin: 30px;
+	padding: 0 20px;
+}
+
+
+.filters label {
+	padding: 12px 30px;
+	background-color: white;
+	border: 3px solid #EE7000;
+	border-radius: 25px;
+	font-size: 20px;
+	font-weight: normal;
+	color: #4F4B40;
+}
+
+.menu {
+	width: 1400px;
+	margin: 0;
+	padding: 0 20px;
+	margin-left: 10%;
+}
+
+.categorie {
+	color: white;
+	font-size: 40px;
+	text-align: center;
+	margin: 50px 0 30px 0;
+	padding: 20px;
+	background-color: #EE7000;
+	border-radius: 15px;
+}
+
+.produits {
+	display: grid;
+	grid-template-columns: 280px 280px 280px 280px;
+	gap: 25px;
+	padding: 30px;
+	margin: 0;
+}
+
+article {
+	background-color: white;
+	padding: 25px;
+	border-radius: 15px;
+	box-shadow: 0 5px 15px #333;
+}
+
+article h2 {
+	color: #EE7000;
+	font-size: 30px;
+	margin-bottom: 10px;
+}
+
+article p {
+	color: #4F4B40;
+	font-size: 20px;
+	line-height: 1.5;
+	margin-bottom: 15px;
+	height: 60px;
+}
+
+.prix {
+	display: inline;
+	font-size: 30px;
+	font-weight: normal;
+	color: #EE7000;
+	text-align: right;
+	float: right;
+}
+
+/*page de connexion */
+
+.connexion {
+	background-color: white;
+	padding: 40px;
+	width: 500px;
+	border-radius: 15px;
+	box-shadow: 0 5px 20px #333;
+	margin: 100px;
+	margin-left: 30%;
+}
+
+.connexion h1 {
+	background-color: #EE7000;
+	color: white;
+	padding: 20px;
+	margin: -40px -40px 20px -40px;
+	border-radius: 15px 15px 0 0;
+	text-align: center;
+	font-size: 2.5em;
+}
+
+.subtitle {
+	text-align: center;
+	color: #4F4B40;
+	font-size: 20px;
+	margin-bottom: 30px;
+}
+
+.login {
+	display: flex;
+	flex-direction: column;
+}
+
+.login label {
+	font-weight: normal;
+	color: #4F4B40;
+	margin-bottom: 8px;
+	font-size: 20px;
+}
+
+.login input {
+	padding: 12px;
+	margin-bottom: 20px;
+	border: 2px solid #EE7000;
+	border-radius: 8px;
+	font-size: 20px;
+	font-family: 'Comic Sans MS';
+	font-style: italic;
+}
+
+.login button {
+	background-color: #EE7000;
+	color: white;
+	padding: 15px;
+	border: none;
+	border-radius: 8px;
+	font-size: 22px;
+	font-weight: normal;
+	font-family: 'Comic Sans MS';
+	font-style: italic;
+	margin-top: 10px;
+}
+
+
+.creer {
+	text-align: center;
+	margin-top: 25px;
+	color: #4F4B40;
+	font-size: 20px;
+}
+
+.creer a {
+	color: #EE7000;
+	font-weight: normal;
+	text-decoration: none;
+}
 
