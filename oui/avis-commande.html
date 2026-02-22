@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Évaluer votre commande</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="orque">Évaluation de votre commande</h1>
+
+    <header>
+        <nav>
+            <a href="#">Accueil</a>
+            <a href="#">Mes commandes</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <div class="narval">
+        <form action="#" method="POST">
+
+            <div class="condor">
+                <h2>Note ce livreur</h2>
+                <div class="mygale" id="notation-etoiles">
+                    <span class="hanneton" data-note="1">★</span>
+                    <span class="hanneton" data-note="2">★</span>
+                    <span class="hanneton" data-note="3">★</span>
+                    <span class="hanneton" data-note="4">★</span>
+                    <span class="hanneton" data-note="5">★</span>
+                </div>
+                <input type="hidden" name="note_livreur" id="note_livreur" value="0">
+                <p class="phasme" id="texte-note">Cliquez sur les étoiles pour noter</p>
+            </div>
+
+            <div class="condor">
+                <h2>Dit ton avis</h2>
+                <label for="avis_livreur">Partagez votre expérience avec le livreur :</label>
+                <textarea id="avis_livreur" name="avis_livreur" placeholder="Dites-nous comment s'est passée la livraison..." required></textarea>
+            </div>
+
+            <div class="condor">
+                <h2>On peut améliorer quoi sale bg</h2>
+                <label for="ameliorations">Comment pourrions-nous améliorer notre service ?</label>
+                <textarea id="ameliorations" name="ameliorations" placeholder="Vos suggestions sont précieuses pour nous améliorer..."></textarea>
+            </div>
+
+            <div class="condor">
+                <h2>Alors tu recommandes ce site</h2>
+                <div class="guppy">
+                    <div class="axolotl">
+                        <input type="radio" id="recommande_oui" name="recommandation" value="oui" required>
+                        <label for="recommande_oui">Oui, absolument !</label>
+                    </div>
+                    <div class="axolotl">
+                        <input type="radio" id="recommande_non" name="recommandation" value="non">
+                        <label for="recommande_non">Non, pas vraiment</label>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="iguane">Envoyer mon avis</button>
+
+        </form>
+    </div>
+
+</body>
+</html>
