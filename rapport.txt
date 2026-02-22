@@ -12,4 +12,7 @@ Maëlys: Page de présentation, Page de profil, Page de connexion
 Raphael: Page administrateur, Page des commandes, Page de livraison
 Rendy: Page d'accueil,Page d’inscription, Page de notation
 
+Raphael à codé plutot en local(VSCode) et à tout uploadé à la fin et Rendy et Maëlys plutot sur Github( et VSCode) au fur et à mesure.
 
+Couleur utilisé: #4F4B40, #EE7000, #FFF4E6, #ddd
+Style: 'Comic Sans MS'    italic
