@@ -1,0 +1,135 @@
+<?php
+// On stocke toutes les commandes dans un tableau//
+$commandes = [
+    [
+        "numero"  => 1,
+        "client"  => "Jean Dupont",
+        "type"    => "livraison",
+        "adresse" => "7 avenue Victor Hugo, Boulogne",
+        "date"    => "2026-03-22",
+        "heure"   => "12:22",
+        "plats"   => "2x Tacos del Cochono + 1x Donuts La Abuela + 3x Agua de Jamaica",
+        "statut"  => "En préparation"
+    ],
+    [
+        "numero"  => 2,
+        "client"  => "Choupi et Doudou",
+        "type"    => "sur_place",
+        "adresse" => "Le Goupix, 3 rue de la Paix, Paris",
+        "date"    => "2026-03-22",
+        "heure"   => "12:35",
+        "plats"   => "10x Tacos del Cochono + 1x Agua de Jamaica + 7x Chocolate Caliente",
+        "statut"  => "Prête"
+    ],
+    [
+        "numero"  => 3,
+        "client"  => "Rendy Aquali",
+        "type"    => "sur_place",
+        "adresse" => "Le Goupix, 3 rue de la Paix, Paris",
+        "date"    => "2026-03-22",
+        "heure"   => "13:10",
+        "plats"   => "1x Burritos de Pouleto",
+        "statut"  => "Prête"
+    ],
+    [
+        "numero"  => 4,
+        "client"  => "Bernardo Wa",
+        "type"    => "livraison",
+        "adresse" => "55 bd Haussmann, Paris",
+        "date"    => "2026-03-22",
+        "heure"   => "13:25",
+        "plats"   => "69x Donuts La Abuela",
+        "statut"  => "En livraison"
+    ],
+    [
+        "numero"  => 5,
+        "client"  => "Poireau Poire",
+        "type"    => "sur_place",
+        "adresse" => "Le Goupix, 3 rue de la Paix, Paris",
+        "date"    => "2026-03-22",
+        "heure"   => "13:40",
+        "plats"   => "1x Quesadillas Queso + 1x Donuts Fuego Cacao",
+        "statut"  => "En attente"
+    ],
+    [
+        "numero"  => 6,
+        "client"  => "Jus D'Orange",
+        "type"    => "livraison",
+        "adresse" => "18 rue du Faubourg Saint-Antoine, Paris",
+        "date"    => "2026-03-22",
+        "heure"   => "13:50",
+        "plats"   => "2x Quesadillas Queso",
+        "statut"  => "Livrée"
+    ],
+    [
+        "numero"  => 7,
+        "client"  => "Camille Commère",
+        "type"    => "livraison",
+        "adresse" => "12 rue des Lilas, Paris",
+        "date"    => "2026-03-22",
+        "heure"   => "14:00",
+        "plats"   => "5x Donuts Fuego Cacao",
+        "statut"  => "En attente"
+    ],
+];
+?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Le Goupix - Commandes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+//header//
+<header class="header-outer">
+    <div class="header-inner responsive-wrapper1">
+        <div class="header-title">Le Goupix</div>
+        <div class="header-logo">
+            <img class="img-float" src="goupix.webp"/>
+        </div>
+    </div>
+    <div class="header-inner responsive-wrapper2">
+        <nav class="header-navigation">
+            <div><button>Accueil</button></div>
+            <div><button>Les menus</button></div>
+            <div><button>Compte</button></div>
+        </nav>
+    </div>
+</header>
+
+<main class="presentation">
+    <br/>
+
+    //tableau pour commandes//
+    <?php foreach ($commandes as $commande) : ?>
+
+        <div class="order">
+            <div class="order-info">
+                <div class="title">-Commande n°<?= $commande["numero"] ?>:</div>
+                <div class="title"><br/><?= $commande["plats"] ?></div>
+            </div>
+        </div>
+
+        <form>
+            <div>
+                <input type="checkbox" id="n<?= $commande["numero"] ?>"/>
+                <label for="n<?= $commande["numero"] ?>">
+                    Statut : <?= $commande["statut"] ?>
+                </label>
+            </div>
+        </form>
+
+        <br/>
+
+    <?php endforeach; ?>
+
+</main>
+
+<footer>
+    <p>2026 - Le Goupix</p>
+</footer>
+
+</body>
+</html>
