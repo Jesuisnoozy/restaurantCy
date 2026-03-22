@@ -1,5 +1,5 @@
 <?php
-// On stocke toutes les commandes dans un tableau//
+// On stocke toutes les commandes dans un tableau
 $commandes = [
     [
         "numero"  => 1,
@@ -9,7 +9,8 @@ $commandes = [
         "date"    => "2026-03-22",
         "heure"   => "12:22",
         "plats"   => "2x Tacos del Cochono + 1x Donuts La Abuela + 3x Agua de Jamaica",
-        "statut"  => "En préparation"
+        "statut"  => "En préparation",
+        "livreur" => "Brigitte R."
     ],
     [
         "numero"  => 2,
@@ -19,7 +20,8 @@ $commandes = [
         "date"    => "2026-03-22",
         "heure"   => "12:35",
         "plats"   => "10x Tacos del Cochono + 1x Agua de Jamaica + 7x Chocolate Caliente",
-        "statut"  => "Prête"
+        "statut"  => "Prête",
+        "livreur" => "Michelle L."
     ],
     [
         "numero"  => 3,
@@ -29,7 +31,8 @@ $commandes = [
         "date"    => "2026-03-22",
         "heure"   => "13:10",
         "plats"   => "1x Burritos de Pouleto",
-        "statut"  => "Prête"
+        "statut"  => "Prête",
+        "livreur" => "Michelle L."
     ],
     [
         "numero"  => 4,
@@ -40,6 +43,7 @@ $commandes = [
         "heure"   => "13:25",
         "plats"   => "69x Donuts La Abuela",
         "statut"  => "En livraison"
+        "livreur" => "Brigitte R."
     ],
     [
         "numero"  => 5,
@@ -49,7 +53,8 @@ $commandes = [
         "date"    => "2026-03-22",
         "heure"   => "13:40",
         "plats"   => "1x Quesadillas Queso + 1x Donuts Fuego Cacao",
-        "statut"  => "En attente"
+        "statut"  => "En attente",
+        "livreur" => "Michelle L."
     ],
     [
         "numero"  => 6,
@@ -59,7 +64,8 @@ $commandes = [
         "date"    => "2026-03-22",
         "heure"   => "13:50",
         "plats"   => "2x Quesadillas Queso",
-        "statut"  => "Livrée"
+        "statut"  => "Livrée",
+        "livreur" => "Brigitte R."
     ],
     [
         "numero"  => 7,
@@ -69,7 +75,8 @@ $commandes = [
         "date"    => "2026-03-22",
         "heure"   => "14:00",
         "plats"   => "5x Donuts Fuego Cacao",
-        "statut"  => "En attente"
+        "statut"  => "En attente",
+        "livreur" => "Brigitte R."
     ],
 ];
 ?>
@@ -81,8 +88,7 @@ $commandes = [
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-//header//
+ 
 <header class="header-outer">
     <div class="header-inner responsive-wrapper1">
         <div class="header-title">Le Goupix</div>
@@ -98,38 +104,37 @@ $commandes = [
         </nav>
     </div>
 </header>
-
+ 
 <main class="presentation">
     <br/>
-
-    //tableau pour commandes//
+ 
     <?php foreach ($commandes as $commande) : ?>
-
+ 
         <div class="order">
             <div class="order-info">
                 <div class="title">-Commande n°<?= $commande["numero"] ?>:</div>
                 <div class="title"><br/><?= $commande["plats"] ?></div>
             </div>
         </div>
-
+ 
         <form>
             <div>
                 <input type="checkbox" id="n<?= $commande["numero"] ?>"/>
                 <label for="n<?= $commande["numero"] ?>">
-                    Statut : <?= $commande["statut"] ?>
+                    Statut : <?= $commande["statut"] ?> — Livreur : <?= $commande["livreur"] ?>
                 </label>
             </div>
         </form>
-
+ 
         <br/>
-
+ 
     <?php endforeach; ?>
-
+ 
 </main>
-
+ 
 <footer>
     <p>2026 - Le Goupix</p>
 </footer>
-
+ 
 </body>
 </html>
