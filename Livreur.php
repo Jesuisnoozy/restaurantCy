@@ -1,13 +1,13 @@
 <?php
 
-$commandes = json_decode(file_get_contents("../data/commandes.json"), true);
+$commandes = json_decode(file_get_contents("./data/commandes.json"), true);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Le Goupix - Espace livreur</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
@@ -16,7 +16,7 @@ $commandes = json_decode(file_get_contents("../data/commandes.json"), true);
     <div class="header-inner responsive-wrapper1">
         <div class="header-title">Le Goupix</div>
         <div class="header-logo">
-            <img class="img-float" src="../goupix.webp"/>
+            <img class="img-float" src="./goupix.webp"/>
         </div>
     </div>
     <div class="header-inner responsive-wrapper2">
@@ -49,7 +49,7 @@ $commandes = json_decode(file_get_contents("../data/commandes.json"), true);
         <p class="commontxt2">Statut : <?= $commande["statut"] ?></p>
         <p class="commontxt2">Livreur : <?= $commande["livreur"] ?></p>
 
-        //En phase 3 ces boutons enverront les données à un fichier PHP//
+        <!--En phase 3 ces boutons enverront les données à un fichier PHP-->
         <form method="post" action="update_statut.php">
             <input type="hidden" name="numero" value="<?= $commande["numero"] ?>"/>
             <button type="submit" name="action" value="livree"> Commande livrée</button>
