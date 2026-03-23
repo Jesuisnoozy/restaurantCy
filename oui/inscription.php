@@ -48,11 +48,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (empty($erreur)) {
 
             $utilisateurs[] = [
-                'nom'          => $nom,
-                'email'        => $email,
-                'pseudo'       => $pseudo,
-                'mot_de_passe' => password_hash($mdp, PASSWORD_DEFAULT),
-                'role'         => $role
+                'nom'               => $nom,
+                'email'             => $email,
+                'pseudo'            => $pseudo,
+                'mot_de_passe'      => password_hash($mdp, PASSWORD_DEFAULT),
+                'role'              => $role,
+                'statut'            => 'actif',
+                'vip'               => false,
+                'reduction_vip'     => 0,
+                'raison_suspension' => ''
             ];
 
             file_put_contents(
@@ -74,7 +78,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
 
-<!-- En-tête -->
 <header>
     <nav>
         <a href="connexion.php">Connexion</a>
@@ -84,54 +87,44 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <h1>Créer un compte</h1>
 
-<!-- Bloc principal -->
-<div class="crocodile">
+<?php if ($succes): ?>
 
-    <h2>Rejoindre la plateforme</h2>
+    <div class="msg-succes-global">
+        Compte créé avec succès ! Vous pouvez maintenant vous connecter.
+    </div>
+    <div style="text-align:center; margin-top:20px;">
+        <a href="connexion.php" class="button-17">Se connecter</a>
+    </div>
 
-    <?php if ($succes): ?>
+<?php else: ?>
 
-        <!-- Message de succès -->
-        <div class="poulpe" style="text-align:center;">
-            <p style="color: #4F4B40; font-size: 1.4rem; margin-bottom: 20px;">
-                Compte créé avec succès !
-            </p>
-            <a href="connexion.php" class="button-17">Se connecter</a>
-        </div>
+    <?php if ($erreur): ?>
+        <div class="msg-erreur-global"><?= htmlspecialchars($erreur) ?></div>
+    <?php endif; ?>
 
-    <?php else: ?>
+    <div class="crocodile">
 
-        <!-- Message d'erreur -->
-        <?php if ($erreur): ?>
-            <div style="background:#fff3cd; border:2px solid #EE7000; border-radius:8px; padding:14px 20px; margin-bottom:20px; color:#4F4B40; font-size:1.1rem;">
-                <?= htmlspecialchars($erreur) ?>
-            </div>
-        <?php endif; ?>
+        <h2>Rejoindre la plateforme</h2>
 
         <form method="POST" action="" class="poulpe">
 
-            <!-- Nom + Pseudo côte à côte -->
             <div class="termite">
-
                 <div class="fourmi">
                     <label for="nom">Nom complet</label>
                     <input type="text" id="nom" name="nom"
                            placeholder="Alice Martin"
                            value="<?= htmlspecialchars($_POST['nom'] ?? '') ?>">
                 </div>
-
                 <div class="fourmi">
                     <label for="pseudo">Pseudo</label>
                     <input type="text" id="pseudo" name="pseudo"
                            placeholder="alice"
                            value="<?= htmlspecialchars($_POST['pseudo'] ?? '') ?>">
                 </div>
-
             </div>
 
             <hr class="mante">
 
-            <!-- Email -->
             <div class="fourmi">
                 <label for="email">Adresse email</label>
                 <input type="email" id="email" name="email"
@@ -139,7 +132,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                        value="<?= htmlspecialchars($_POST['email'] ?? '') ?>">
             </div>
 
-            <!-- Mot de passe -->
             <div class="fourmi">
                 <label for="mot_de_passe">Mot de passe</label>
                 <input type="password" id="mot_de_passe" name="mot_de_passe"
@@ -148,57 +140,48 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <hr class="mante">
 
-            <!-- Choix du rôle -->
             <div class="fourmi">
-                <label>Je suis...</label>
-                <div style="display:flex; gap:16px; margin-top:8px; flex-wrap:wrap;">
-
-                    <label class="grillon">
-                        <input type="radio" name="role" value="client"
-                               <?= ($_POST['role'] ?? '') === 'client' ? 'checked' : '' ?>>
+                <label for="role">Je suis...</label>
+                <select id="role" name="role">
+                    <option value="">-- Choisir mon rôle --</option>
+                    <option value="client"
+                        <?= ($_POST['role'] ?? '') === 'client' ? 'selected' : '' ?>>
                         Client
-                    </label>
-
-                    <label class="grillon">
-                        <input type="radio" name="role" value="restaurateur"
-                               <?= ($_POST['role'] ?? '') === 'restaurateur' ? 'checked' : '' ?>>
+                    </option>
+                    <option value="restaurateur"
+                        <?= ($_POST['role'] ?? '') === 'restaurateur' ? 'selected' : '' ?>>
                         Restaurateur
-                    </label>
-
-                    <label class="grillon">
-                        <input type="radio" name="role" value="livreur"
-                               <?= ($_POST['role'] ?? '') === 'livreur' ? 'checked' : '' ?>>
+                    </option>
+                    <option value="livreur"
+                        <?= ($_POST['role'] ?? '') === 'livreur' ? 'selected' : '' ?>>
                         Livreur
-                    </label>
-
-                </div>
+                    </option>
+                </select>
             </div>
 
             <hr class="mante">
 
-            <!-- CGU -->
             <label class="grillon">
                 <input type="checkbox" required>
                 J'accepte les <a href="#">conditions d'utilisation</a>
             </label>
 
-            <!-- Bouton -->
             <div style="text-align:center; margin-top:24px;">
-                <button type="submit" class="button-17" style="font-size:1.2rem; padding: 12px 40px; height:auto;">
+                <button type="submit" class="button-17"
+                        style="font-size:1.2rem; padding:12px 40px; height:auto;">
                     Créer mon compte
                 </button>
             </div>
 
         </form>
 
-        <!-- Lien connexion -->
         <p class="papillon">
             Déjà un compte ? <a href="connexion.php">Se connecter</a>
         </p>
 
-    <?php endif; ?>
+    </div>
 
-</div>
+<?php endif; ?>
 
 </body>
 </html>
