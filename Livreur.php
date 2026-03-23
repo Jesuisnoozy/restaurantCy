@@ -49,7 +49,7 @@ $commandes = json_decode(file_get_contents("../data/commandes.json"), true);
         <p class="commontxt2">Statut : <?= $commande["statut"] ?></p>
         <p class="commontxt2">Livreur : <?= $commande["livreur"] ?></p>
 
-        //En phase 3 ces boutons enverront les données à un fichier PHP -->
+        //En phase 3 ces boutons enverront les données à un fichier PHP//
         <form method="post" action="update_statut.php">
             <input type="hidden" name="numero" value="<?= $commande["numero"] ?>"/>
             <button type="submit" name="action" value="livree"> Commande livrée</button>
