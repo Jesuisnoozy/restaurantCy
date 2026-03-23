@@ -1,13 +1,13 @@
 <?php
 
-$commandes = json_decode(file_get_contents("../data/commandes.json"), true);
+$commandes = json_decode(file_get_contents("./data/commandes.json"), true);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Le Goupix - Historique des commandes</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
@@ -48,10 +48,10 @@ $commandes = json_decode(file_get_contents("../data/commandes.json"), true);
         <p class="commontxt2">Statut : <?= $commande["statut"] ?></p>
         <p class="commontxt2">Livreur : <?= $commande["livreur"] ?></p>
 
-        //Si commande livré, le client peut la noter//
+        <!--Si commande livré, le client peut la noter-->
         <?php if ($commande["statut"] === "Livrée") : ?>
             <p class="commontxt2">⭐ Noter cette commande :</p>
-            //A modif en phase 3 //
+            <!-- modif en phase 3 -->
             <form method="post" action="noter_commande.php">
                 <input type="hidden" name="numero" value="<?= $commande["numero"] ?>"/>
                 <label><input type="radio" name="note" value="1"/> ⭐</label>
