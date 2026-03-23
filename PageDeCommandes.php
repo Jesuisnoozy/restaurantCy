@@ -1,99 +1,22 @@
 <?php
-// On stocke toutes les commandes dans un tableau
-$commandes = [
-    [
-        "numero"  => 1,
-        "client"  => "Jean Dupont",
-        "type"    => "livraison",
-        "adresse" => "7 avenue Victor Hugo, Boulogne",
-        "date"    => "2026-03-22",
-        "heure"   => "12:22",
-        "plats"   => "2x Tacos del Cochono + 1x Donuts La Abuela + 3x Agua de Jamaica",
-        "statut"  => "En préparation",
-        "livreur" => "Brigitte R."
-    ],
-    [
-        "numero"  => 2,
-        "client"  => "Choupi et Doudou",
-        "type"    => "sur_place",
-        "adresse" => "Le Goupix, 3 rue de la Paix, Paris",
-        "date"    => "2026-03-22",
-        "heure"   => "12:35",
-        "plats"   => "10x Tacos del Cochono + 1x Agua de Jamaica + 7x Chocolate Caliente",
-        "statut"  => "Prête",
-        "livreur" => "Michelle L."
-    ],
-    [
-        "numero"  => 3,
-        "client"  => "Rendy Aquali",
-        "type"    => "sur_place",
-        "adresse" => "Le Goupix, 3 rue de la Paix, Paris",
-        "date"    => "2026-03-22",
-        "heure"   => "13:10",
-        "plats"   => "1x Burritos de Pouleto",
-        "statut"  => "Prête",
-        "livreur" => "Michelle L."
-    ],
-    [
-        "numero"  => 4,
-        "client"  => "Bernardo Wa",
-        "type"    => "livraison",
-        "adresse" => "55 bd Haussmann, Paris",
-        "date"    => "2026-03-22",
-        "heure"   => "13:25",
-        "plats"   => "69x Donuts La Abuela",
-        "statut"  => "En livraison"
-        "livreur" => "Brigitte R."
-    ],
-    [
-        "numero"  => 5,
-        "client"  => "Poireau Poire",
-        "type"    => "sur_place",
-        "adresse" => "Le Goupix, 3 rue de la Paix, Paris",
-        "date"    => "2026-03-22",
-        "heure"   => "13:40",
-        "plats"   => "1x Quesadillas Queso + 1x Donuts Fuego Cacao",
-        "statut"  => "En attente",
-        "livreur" => "Michelle L."
-    ],
-    [
-        "numero"  => 6,
-        "client"  => "Jus D'Orange",
-        "type"    => "livraison",
-        "adresse" => "18 rue du Faubourg Saint-Antoine, Paris",
-        "date"    => "2026-03-22",
-        "heure"   => "13:50",
-        "plats"   => "2x Quesadillas Queso",
-        "statut"  => "Livrée",
-        "livreur" => "Brigitte R."
-    ],
-    [
-        "numero"  => 7,
-        "client"  => "Camille Commère",
-        "type"    => "livraison",
-        "adresse" => "12 rue des Lilas, Paris",
-        "date"    => "2026-03-22",
-        "heure"   => "14:00",
-        "plats"   => "5x Donuts Fuego Cacao",
-        "statut"  => "En attente",
-        "livreur" => "Brigitte R."
-    ],
-];
+
+$commandes = json_decode(file_get_contents("../data/commandes.json"), true);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Le Goupix - Commandes</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
- 
+
+
 <header class="header-outer">
     <div class="header-inner responsive-wrapper1">
         <div class="header-title">Le Goupix</div>
         <div class="header-logo">
-            <img class="img-float" src="goupix.webp"/>
+            <img class="img-float" src="../goupix.webp"/>
         </div>
     </div>
     <div class="header-inner responsive-wrapper2">
@@ -104,37 +27,60 @@ $commandes = [
         </nav>
     </div>
 </header>
- 
+
+
 <main class="presentation">
     <br/>
- 
+
+    <p class="commontxt">Commandes du jour</p>
+    <br/>
+
     <?php foreach ($commandes as $commande) : ?>
- 
+
         <div class="order">
             <div class="order-info">
-                <div class="title">-Commande n°<?= $commande["numero"] ?>:</div>
+                <div class="title">-Commande n°<?= $commande["numero"] ?> — <?= $commande["client"] ?></div>
                 <div class="title"><br/><?= $commande["plats"] ?></div>
             </div>
         </div>
- 
-        <form>
-            <div>
-                <input type="checkbox" id="n<?= $commande["numero"] ?>"/>
-                <label for="n<?= $commande["numero"] ?>">
-                    Statut : <?= $commande["statut"] ?> — Livreur : <?= $commande["livreur"] ?>
-                </label>
-            </div>
+
+        <p class="commontxt2"> <?= $commande["adresse"] ?></p>
+        <p class="commontxt2"> <?= $commande["date"] ?> à <?= $commande["heure"] ?></p>
+
+        <form method="post" action="update_statut.php">
+            <input type="hidden" name="numero" value="<?= $commande["numero"] ?>"/>
+
+            <p class="commontxt2">Statut actuel : <?= $commande["statut"] ?></p>
+            <select name="statut">
+                <option>En attente</option>
+                <option>En préparation</option>
+                <option>Prête</option>
+                <option>En livraison</option>
+                <option>Livrée</option>
+                <option>Abandonnée</option>
+            </select>
+
+            <br/><br/>
+
+            <p class="commontxt2">Livreur actuel : <?= $commande["livreur"] ?></p>
+            <select name="livreur">
+                <option>Brigitte R.</option>
+                <option>Michelle L.</option>
+            </select>
+
+            <br/><br/>
+            <button type="submit">Enregistrer</button>
         </form>
- 
+
         <br/>
- 
+
     <?php endforeach; ?>
- 
+
 </main>
- 
+
 <footer>
     <p>2026 - Le Goupix</p>
 </footer>
- 
+
 </body>
 </html>
