@@ -1,13 +1,13 @@
 <?php
 
-$commandes = json_decode(file_get_contents("../data/commandes.json"), true);
+$commandes = json_decode(file_get_contents("./data/commandes.json"), true);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Le Goupix - Commandes</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
@@ -38,19 +38,20 @@ $commandes = json_decode(file_get_contents("../data/commandes.json"), true);
     <?php foreach ($commandes as $commande) : ?>
 
         <div class="order">
-            <div class="order-info">
-                <div class="title">-Commande n°<?= $commande["numero"] ?> — <?= $commande["client"] ?></div>
-                <div class="title"><br/><?= $commande["plats"] ?></div>
-            </div>
+    	<div class="order-info">
+        <div class="title">
+            -Commande n°<?= $commande["numero"] ?> — <?= $commande["client"] ?>
         </div>
+        <div class="title"><br/><?= $commande["plats"] ?></div>
 
-        <p class="commontxt2"> <?= $commande["adresse"] ?></p>
-        <p class="commontxt2"> <?= $commande["date"] ?> à <?= $commande["heure"] ?></p>
+        <p class="commontxt2"><?= $commande["adresse"] ?></p>
+        <p class="commontxt2"><?= $commande["date"] ?> à <?= $commande["heure"] ?></p>
 
         <form method="post" action="update_statut.php">
             <input type="hidden" name="numero" value="<?= $commande["numero"] ?>"/>
 
             <p class="commontxt2">Statut actuel : <?= $commande["statut"] ?></p>
+
             <select name="statut">
                 <option>En attente</option>
                 <option>En préparation</option>
@@ -63,6 +64,7 @@ $commandes = json_decode(file_get_contents("../data/commandes.json"), true);
             <br/><br/>
 
             <p class="commontxt2">Livreur actuel : <?= $commande["livreur"] ?></p>
+
             <select name="livreur">
                 <option>Brigitte R.</option>
                 <option>Michelle L.</option>
@@ -71,8 +73,8 @@ $commandes = json_decode(file_get_contents("../data/commandes.json"), true);
             <br/><br/>
             <button type="submit">Enregistrer</button>
         </form>
-
-        <br/>
+    </div>
+</div>
 
     <?php endforeach; ?>
 
