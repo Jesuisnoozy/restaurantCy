@@ -1,5 +1,5 @@
 <?php
-$plats = json_decode(file_get_contents("./data/plats.json"), true);
+$plats = json_decode(file_get_contents("./data/PMC.json"), true);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
