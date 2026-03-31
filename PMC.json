@@ -1,0 +1,231 @@
+{
+    "plats": [
+        {
+            "nom": "Tacos del Cochono",
+            "categorie": "plat",
+            "description": "Porc mariné, ananas, coriandre, oignons.",
+            "prix": "8.50€",
+            "calories": "650 kcal",
+            "allergenes": "Gluten, Lait"
+        },
+        {
+            "nom": "Burritos de Pouleto",
+            "categorie": "plat",
+            "description": "Poulet épicé, riz, haricots rouges, fromage.",
+            "prix": "10.90€",
+            "calories": "720 kcal",
+            "allergenes": "Gluten, Lait"
+        },
+        {
+            "nom": "Quesadillas Queso",
+            "categorie": "plat",
+            "description": "Tortilla de blé, riz, haricots rouges, fromage fondant.",
+            "prix": "7.00€",
+            "calories": "580 kcal",
+            "allergenes": "Gluten, Lait"
+        },
+        {
+            "nom": "Enchiladas Rojas",
+            "categorie": "plat",
+            "description": "Tortillas farcies au boeuf, sauce tomate épicée, fromage gratiné.",
+            "prix": "9.50€",
+            "calories": "700 kcal",
+            "allergenes": "Gluten, Lait"
+        },
+        {
+            "nom": "Tostadas del Mar",
+            "categorie": "plat",
+            "description": "Tortilla croustillante, crevettes, avocat, citron vert.",
+            "prix": "11.50€",
+            "calories": "520 kcal",
+            "allergenes": "Gluten, Crustacés"
+        },
+        {
+            "nom": "Nachos Locos",
+            "categorie": "plat",
+            "description": "Chips de maïs, fromage fondu, jalapeños, crème fraîche.",
+            "prix": "7.50€",
+            "calories": "610 kcal",
+            "allergenes": "Gluten, Lait"
+        },
+        {
+            "nom": "Bowl Vegano",
+            "categorie": "plat",
+            "description": "Riz, haricots noirs, maïs, avocat, salsa verde.",
+            "prix": "8.00€",
+            "calories": "480 kcal",
+            "allergenes": "Aucun"
+        },
+        {
+            "nom": "Donuts Churro Loco",
+            "categorie": "dessert",
+            "description": "Glaçage : sucre et cannelle.",
+            "prix": "3.00€",
+            "calories": "280 kcal",
+            "allergenes": "Gluten, Oeufs, Lait"
+        },
+        {
+            "nom": "Donuts La Abuela",
+            "categorie": "dessert",
+            "description": "Glaçage : cajeta et fleur de sel.",
+            "prix": "3.20€",
+            "calories": "300 kcal",
+            "allergenes": "Gluten, Oeufs, Lait"
+        },
+        {
+            "nom": "Donuts Fuego Cacao",
+            "categorie": "dessert",
+            "description": "Glaçage : chocolat noir et piment ancho.",
+            "prix": "3.50€",
+            "calories": "320 kcal",
+            "allergenes": "Gluten, Oeufs, Lait"
+        },
+        {
+            "nom": "Donuts Verde Limón",
+            "categorie": "dessert",
+            "description": "Glaçage : citron vert, zeste et piment.",
+            "prix": "3.50€",
+            "calories": "290 kcal",
+            "allergenes": "Gluten, Oeufs, Lait"
+        },
+        {
+            "nom": "Agua de Jamaica",
+            "categorie": "boisson",
+            "description": "Eau et sirop d'hibiscus.",
+            "prix": "3.00€",
+            "calories": "80 kcal",
+            "allergenes": "Aucun"
+        },
+        {
+            "nom": "Piña Brava",
+            "categorie": "boisson",
+            "description": "Jus d'ananas, gingembre, pointe de piment.",
+            "prix": "3.50€",
+            "calories": "110 kcal",
+            "allergenes": "Aucun"
+        },
+        {
+            "nom": "La Clásica Margarita",
+            "categorie": "boisson",
+            "description": "Tequila, triple sec et jus de citron vert.",
+            "prix": "5.50€",
+            "calories": "200 kcal",
+            "allergenes": "Aucun"
+        },
+        {
+            "nom": "Chocolate Caliente",
+            "categorie": "boisson",
+            "description": "Chocolat noir fondu, lait et pointe de piment.",
+            "prix": "3.50€",
+            "calories": "150 kcal",
+            "allergenes": "Lait"
+        }
+    ],
+
+    "menus": [
+        {
+            "nom": "Menu Fiesta",
+            "description": "Le menu festif par excellence, pour les amateurs de saveurs mexicaines.",
+            "prix": "12.00€",
+            "plats": ["Tacos del Cochono", "Donuts La Abuela", "Agua de Jamaica"],
+            "personnes_minimum": 1,
+            "creneaux": "Disponible midi et soir"
+        },
+        {
+            "nom": "Menu Vegano",
+            "description": "Un menu 100% végétalien, savoureux et équilibré.",
+            "prix": "11.50€",
+            "plats": ["Bowl Vegano", "Donuts Verde Limón", "Piña Brava"],
+            "personnes_minimum": 1,
+            "creneaux": "Disponible midi uniquement"
+        },
+        {
+            "nom": "Menu Mar",
+            "description": "Le menu de la mer, frais et épicé.",
+            "prix": "14.00€",
+            "plats": ["Tostadas del Mar", "Donuts Fuego Cacao", "Piña Brava"],
+            "personnes_minimum": 2,
+            "creneaux": "Disponible midi et soir"
+        }
+    ],
+
+    "commandes": [
+        {
+            "numero": 1,
+            "client": "Jean Dupont",
+            "type": "livraison",
+            "adresse": "7 avenue Victor Hugo, Boulogne",
+            "date": "2026-03-22",
+            "heure": "12:22",
+            "plats": "2x Tacos del Cochono + 1x Donuts La Abuela + 3x Agua de Jamaica",
+            "statut": "En préparation",
+            "livreur": "Brigitte R."
+        },
+        {
+            "numero": 2,
+            "client": "Choupi et Doudou",
+            "type": "sur_place",
+            "adresse": "Le Goupix, 3 rue de la Paix, Paris",
+            "date": "2026-03-22",
+            "heure": "12:35",
+            "plats": "10x Tacos del Cochono + 1x Agua de Jamaica + 7x Chocolate Caliente",
+            "statut": "Prête",
+            "livreur": "Michelle L."
+        },
+        {
+            "numero": 3,
+            "client": "Rendy Aquali",
+            "type": "sur_place",
+            "adresse": "Le Goupix, 3 rue de la Paix, Paris",
+            "date": "2026-03-22",
+            "heure": "13:10",
+            "plats": "1x Burritos de Pouleto",
+            "statut": "Prête",
+            "livreur": "Michelle L."
+        },
+        {
+            "numero": 4,
+            "client": "Bernardo Wa",
+            "type": "livraison",
+            "adresse": "55 bd Haussmann, Paris",
+            "date": "2026-03-22",
+            "heure": "13:25",
+            "plats": "69x Donuts La Abuela",
+            "statut": "En livraison",
+            "livreur": "Brigitte R."
+        },
+        {
+            "numero": 5,
+            "client": "Poireau Poire",
+            "type": "sur_place",
+            "adresse": "Le Goupix, 3 rue de la Paix, Paris",
+            "date": "2026-03-22",
+            "heure": "13:40",
+            "plats": "1x Quesadillas Queso + 1x Donuts Fuego Cacao",
+            "statut": "En attente",
+            "livreur": "Michelle L."
+        },
+        {
+            "numero": 6,
+            "client": "Jus D'Orange",
+            "type": "livraison",
+            "adresse": "18 rue du Faubourg Saint-Antoine, Paris",
+            "date": "2026-03-22",
+            "heure": "13:50",
+            "plats": "2x Quesadillas Queso",
+            "statut": "Livrée",
+            "livreur": "Brigitte R."
+        },
+        {
+            "numero": 7,
+            "client": "Camille Commère",
+            "type": "livraison",
+            "adresse": "12 rue des Lilas, Paris",
+            "date": "2026-03-22",
+            "heure": "14:00",
+            "plats": "5x Donuts Fuego Cacao",
+            "statut": "En attente",
+            "livreur": "Brigitte R."
+        }
+    ]
+}
