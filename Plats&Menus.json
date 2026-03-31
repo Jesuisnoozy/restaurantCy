@@ -120,3 +120,42 @@
         "allergenes": "Lait"
     }
 ]
+    [
+  {
+    "nom": "Menu Fiesta",
+    "description": "Le menu festif par excellence, pour les amateurs de saveurs mexicaines.",
+    "prix": "12.00€",
+    "plats": [
+      "Tacos del Cochono",
+      "Donuts La Abuela",
+      "Agua de Jamaica"
+    ],
+    "personnes_minimum": 1,
+    "creneaux": "Disponible midi et soir"
+  },
+  {
+    "nom": "Menu Vegano",
+    "description": "Un menu 100% végétalien, savoureux et équilibré.",
+    "prix": "11.50€",
+    "plats": [
+      "Bowl Vegano",
+      "Donuts Verde Limón",
+      "Piña Brava"
+    ],
+    "personnes_minimum": 1,
+    "creneaux": "Disponible midi uniquement"
+  },
+  {
+    "nom": "Menu Mar",
+    "description": "Le menu de la mer, frais et épicé.",
+    "prix": "14.00€",
+    "plats": [
+      "Tostadas del Mar",
+      "Donuts Fuego Cacao",
+      "Piña Brava"
+    ],
+    "personnes_minimum": 2,
+    "creneaux": "Disponible midi et soir"
+  }
+]
+
