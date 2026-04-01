@@ -13,20 +13,14 @@ $menus = $data["menus"];
 <body>
 
 <header class="header-outer">
-    <div class="header-inner responsive-wrapper1">
-        <div class="header-title">Le Goupix</div>
-        <div class="header-logo">
-            <img class="img-float" src="../goupix.webp"/>
-        </div>
-    </div>
-    <div class="header-inner responsive-wrapper2">
-        <nav class="header-navigation">
-            <div><button onclick="location.href='carte.php'">La carte</button></div>
-            <div><button onclick="location.href='menus.php'">Les menus</button></div>
-            <div><button onclick="location.href='panier.php'">🛒 Panier</button></div>
-            <div><button onclick="location.href='compte.php'">Compte</button></div>
-        </nav>
-    </div>
+    <div class="header-title">Le Goupix</div>
+    <img src="goupix.webp"/>
+    <nav class="header-navigation">
+        <button onclick="location.href='carte.php'">La carte</button>
+        <button onclick="location.href='menus.php'">Les menus</button>
+        <button onclick="location.href='panier.php'">Panier</button>
+        <button onclick="location.href='compte.php'">Compte</button>
+    </nav>
 </header>
 
 
