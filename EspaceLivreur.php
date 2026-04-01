@@ -1,6 +1,6 @@
 <?php
 
-$data = json_decode(file_get_contents("../data/data.json"), true);
+$data = json_decode(file_get_contents("data/PMC.json"), true);
 $commandes = $data["commandes"];
 ?>
 <!DOCTYPE html>
