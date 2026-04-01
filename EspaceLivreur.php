@@ -1,31 +1,27 @@
 <?php
 
-$commandes = json_decode(file_get_contents("./data/commandes.json"), true);
+$data = json_decode(file_get_contents("../data/data.json"), true);
+$commandes = $data["commandes"];
 ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Le Goupix - Espace livreur</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 
 <header class="header-outer">
-    <div class="header-inner responsive-wrapper1">
-        <div class="header-title">Le Goupix</div>
-        <div class="header-logo">
-            <img class="img-float" src="./goupix.webp"/>
-        </div>
-    </div>
-    <div class="header-inner responsive-wrapper2">
-        <nav class="header-navigation">
-            <div><button>Accueil</button></div>
-            <div><button>Les menus</button></div>
-            <div><button>Compte</button></div>
-        </nav>
-    </div>
+    <div class="header-title">Le Goupix</div>
+    <img src="goupix.webp"/>
+    <nav class="header-navigation">
+        <button onclick="location.href='carte.php'">La carte</button>
+        <button onclick="location.href='menus.php'">Les menus</button>
+        <button onclick="location.href='panier.php'">Panier</button>
+        <button onclick="location.href='compte.php'">Compte</button>
+    </nav>
 </header>
 
 
@@ -49,7 +45,7 @@ $commandes = json_decode(file_get_contents("./data/commandes.json"), true);
         <p class="commontxt2">Statut : <?= $commande["statut"] ?></p>
         <p class="commontxt2">Livreur : <?= $commande["livreur"] ?></p>
 
-        <!--En phase 3 ces boutons enverront les données à un fichier PHP-->
+
         <form method="post" action="update_statut.php">
             <input type="hidden" name="numero" value="<?= $commande["numero"] ?>"/>
             <button type="submit" name="action" value="livree"> Commande livrée</button>
