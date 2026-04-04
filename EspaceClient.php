@@ -1,5 +1,6 @@
 <?php
 
+session_start()
 $data = json_decode(file_get_contents("data/PMC.json"), true);
 $commandes = $data["commandes"];
 ?>
