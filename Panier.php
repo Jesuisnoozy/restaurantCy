@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 $data  = json_decode(file_get_contents("data/PMC.json"), true);
 $plats = $data["plats"];
 $menus = $data["menus"];
@@ -33,6 +34,7 @@ $menus = $data["menus"];
 
     <!-- Formulaire de commande -->
     <form method="post" action="valider_commande.php">
+        <input type="hidden" name="client" value="<?= $_SESSION['pseudo'] ?>"/>
 
         <!-- 1: Choisir des plats -->
         <p class="commontxt"> Choisir des plats</p>
@@ -88,7 +90,7 @@ $menus = $data["menus"];
         <br/>
 
         <!-- 4 : Immédiat ou plus tard -->
-        <p class="commontxt">🕐 Quand souhaitez-vous être livré ?</p>
+        <p class="commontxt"> Quand souhaitez-vous être livré ?</p>
         <br/>
         <p class="commontxt2">
             <input type="radio" name="quand" value="maintenant" checked/> Maintenant
