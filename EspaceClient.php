@@ -1,6 +1,6 @@
 <?php
 
-session_start()
+session_start();
 $data = json_decode(file_get_contents("data/PMC.json"), true);
 $commandes = $data["commandes"];
 ?>
@@ -31,6 +31,22 @@ $commandes = $data["commandes"];
 
     <p class="commontxt">Historique des commandes</p>
     <br/>
+
+    <!-- Message de confirmation après une commande -->
+    <?php if (isset($_GET['message'])) : ?>
+        <p class="commontxt2">
+            <?= htmlspecialchars($_GET['message']) ?>
+        </p>
+        <br/>
+    <?php endif; ?>
+ 
+    <!-- Message d'erreur -->
+    <?php if (isset($_GET['erreur'])) : ?>
+        <p class="commontxt2">
+            <?= htmlspecialchars($_GET['erreur']) ?>
+        </p>
+        <br/>
+    <?php endif; ?>
 
     <?php foreach ($commandes as $commande) : ?>
 
