@@ -5,23 +5,20 @@ if (!isset($_SESSION['pseudo'])) {
     header('Location: connexion.php');
     exit;
 }
- 
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: panier.php');
     exit;
 }
- 
+
 $fichier = 'data/PMC.json';
 $data    = json_decode(file_get_contents($fichier), true);
  
-
 $plats_choisis = [];
  
 foreach ($data["plats"] as $plat) {
     $nom_champ = 'plat_' . $plat["nom"];
     $quantite  = intval($_POST[$nom_champ] ?? 0);
- 
     if ($quantite > 0) {
         $plats_choisis[] = $quantite . 'x ' . $plat["nom"];
     }
@@ -51,15 +48,14 @@ if ($type === 'sur_place') {
     $adresse = 'Le Goupix, 3 rue de la Paix, Paris';
 }
  
-// Récupérer la date et l'heure
-$quand         = $_POST['quand'] ?? 'maintenant';
+
+$quand          = $_POST['quand'] ?? 'maintenant';
 $date_souhaitee = $_POST['date_souhaitee'] ?? '';
  
 if ($quand === 'maintenant') {
     $date  = date('Y-m-d');
     $heure = date('H:i');
 } else {
-    // Si plus tard on utilise la date choisie
     if (empty($date_souhaitee)) {
         header('Location: panier.php?erreur=Veuillez choisir une date et heure.');
         exit;
@@ -68,8 +64,7 @@ if ($quand === 'maintenant') {
     $heure = date('H:i',   strtotime($date_souhaitee));
 }
  
-// Créer le numéro de commande
-// On prend le numéro le plus grand et on ajoute 1
+// Créer le numéro de commande 
 $dernier_numero = 0;
 foreach ($data["commandes"] as $commande) {
     if ($commande["numero"] > $dernier_numero) {
@@ -78,16 +73,18 @@ foreach ($data["commandes"] as $commande) {
 }
 $nouveau_numero = $dernier_numero + 1;
  
+
 $nouvelle_commande = [
-    "numero"  => $nouveau_numero,
-    "client"  => $_SESSION['pseudo'],
-    "type"    => $type,
-    "adresse" => $adresse,
-    "date"    => $date,
-    "heure"   => $heure,
-    "plats"   => implode(' + ', $plats_choisis),
-    "statut"  => "En attente",
-    "livreur" => "Non attribué"
+    "numero"   => $nouveau_numero,
+    "client"   => $_SESSION['pseudo'],
+    "type"     => $type,
+    "adresse"  => $adresse,
+    "date"     => $date,
+    "heure"    => $heure,
+    "plats"    => implode(' + ', $plats_choisis),
+    "statut"   => "En attente",
+    "livreur"  => "Non attribué",
+    "paiement" => "Non payé"  
 ];
  
 
@@ -98,7 +95,7 @@ file_put_contents(
     json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)
 );
  
-
 header('Location: client.php?message=Commande n°' . $nouveau_numero . ' passée avec succès !');
 exit;
 ?>
+ 
