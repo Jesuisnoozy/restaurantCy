@@ -16,3 +16,25 @@ Raphael à codé plutot en local(VSCode) et à tout uploadé à la fin et Rendy 
 
 Couleur utilisé: #4F4B40, #EE7000, #FFF4E6, #ddd, white
 Style: 'Comic Sans MS'    italic
+
+Phase 2
+
+Maëlys: pages des Carte et menus / page 
+Raphael: Payement , validation des informations d'achat et panier
+Rendy: Inscription / connexion / deconnexion / page admin et restaurateur et debuggeur du site 
+
+ce qu'on a fait 
+
+
+Compte et menus fonctionne, de même pour les payements
+Site esthétique et intégration du php réussi
+
+ce qu'on a pas réussi à faire 
+
+Certaines pages ne sont pas forcément présente, notamment celle des menus qui n'a pas eu le temps d'être fait 
+
+Certaines sécurités ont peut être été oubliés sur certaines pages 
+
+vu qu'on peut pas utiliser de script shell, certaines commandes sont limités 
+
+
