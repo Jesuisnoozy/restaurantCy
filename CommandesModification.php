@@ -11,7 +11,7 @@ $fichier= 'data/PMC.json';
 $data= json_decode(file_get_contents($fichier), true);
 $plats= $data["plats"];
 
-// Trouver la commande
+//trouver la commande
 $commande = null;
 foreach ($data["commandes"] as $cmd) {
     if ($cmd["numero"]=== $numero) {
@@ -20,7 +20,7 @@ foreach ($data["commandes"] as $cmd) {
     }
 }
 
-// Vérifier que la commande est modifiable
+//Verif commande modifiable ok
 if ($commande=== null || $commande["statut"]!== "En attente"||$commande["paiement"]!== "Payé") {
     header('Location: client.php?erreur=Cette commande ne peut pas être modifiée.');
     exit;
@@ -121,7 +121,7 @@ function mettreAJourTotal() {
 
     document.getElementById("total-nouveau").textContent= total.toFixed(2)+"€";
 
-    // Message selon la différence
+    //message pour la différence
     const difference= total-prixActuel;
     const msg= document.getElementById("message-difference");
 
