@@ -1,12 +1,15 @@
-{
-  "plats": [
+"plats": [
     {
       "nom": "Tacos del Cochono",
       "categorie": "plat",
       "description": "Porc mariné, ananas, coriandre, oignons.",
       "prix": "8.50€",
       "calories": "650 kcal",
-      "allergenes": "Gluten, Lait"
+      "allergenes": "Gluten, Lait",
+      "tags": [
+        "sale",
+        "epice"
+      ]
     },
     {
       "nom": "Burritos de Pouleto",
@@ -14,7 +17,12 @@
       "description": "Poulet épicé, riz, haricots rouges, fromage.",
       "prix": "10.90€",
       "calories": "720 kcal",
-      "allergenes": "Gluten, Lait"
+      "allergenes": "Gluten, Lait",
+      "tags": [
+        "sale",
+        "epice",
+        "halal"
+      ]
     },
     {
       "nom": "Quesadillas Queso",
@@ -22,7 +30,11 @@
       "description": "Tortilla de blé, riz, haricots rouges, fromage fondant.",
       "prix": "7.00€",
       "calories": "580 kcal",
-      "allergenes": "Gluten, Lait"
+      "allergenes": "Gluten, Lait",
+      "tags": [
+        "sale",
+        "vegetarien"
+      ]
     },
     {
       "nom": "Enchiladas Rojas",
@@ -30,7 +42,11 @@
       "description": "Tortillas farcies au boeuf, sauce tomate épicée, fromage gratiné.",
       "prix": "9.50€",
       "calories": "700 kcal",
-      "allergenes": "Gluten, Lait"
+      "allergenes": "Gluten, Lait",
+      "tags": [
+        "sale",
+        "epice"
+      ]
     },
     {
       "nom": "Tostadas del Mar",
@@ -38,7 +54,10 @@
       "description": "Tortilla croustillante, crevettes, avocat, citron vert.",
       "prix": "11.50€",
       "calories": "520 kcal",
-      "allergenes": "Gluten, Crustacés"
+      "allergenes": "Gluten, Crustacés",
+      "tags": [
+        "sale"
+      ]
     },
     {
       "nom": "Nachos Locos",
@@ -46,7 +65,12 @@
       "description": "Chips de maïs, fromage fondu, jalapeños, crème fraîche.",
       "prix": "7.50€",
       "calories": "610 kcal",
-      "allergenes": "Gluten, Lait"
+      "allergenes": "Gluten, Lait",
+      "tags": [
+        "sale",
+        "epice",
+        "vegetarien"
+      ]
     },
     {
       "nom": "Bowl Vegano",
@@ -54,7 +78,13 @@
       "description": "Riz, haricots noirs, maïs, avocat, salsa verde.",
       "prix": "8.00€",
       "calories": "480 kcal",
-      "allergenes": "Aucun"
+      "allergenes": "Aucun",
+      "tags": [
+        "sale",
+        "vegan",
+        "vegetarien",
+        "sans_gluten"
+      ]
     },
     {
       "nom": "Donuts Churro Loco",
@@ -62,7 +92,11 @@
       "description": "Glaçage : sucre et cannelle.",
       "prix": "3.00€",
       "calories": "280 kcal",
-      "allergenes": "Gluten, Oeufs, Lait"
+      "allergenes": "Gluten, Oeufs, Lait",
+      "tags": [
+        "sucre",
+        "vegetarien"
+      ]
     },
     {
       "nom": "Donuts La Abuela",
@@ -70,7 +104,11 @@
       "description": "Glaçage : cajeta et fleur de sel.",
       "prix": "3.20€",
       "calories": "300 kcal",
-      "allergenes": "Gluten, Oeufs, Lait"
+      "allergenes": "Gluten, Oeufs, Lait",
+      "tags": [
+        "sucre",
+        "vegetarien"
+      ]
     },
     {
       "nom": "Donuts Fuego Cacao",
@@ -78,7 +116,12 @@
       "description": "Glaçage : chocolat noir et piment ancho.",
       "prix": "3.50€",
       "calories": "320 kcal",
-      "allergenes": "Gluten, Oeufs, Lait"
+      "allergenes": "Gluten, Oeufs, Lait",
+      "tags": [
+        "sucre",
+        "epice",
+        "vegetarien"
+      ]
     },
     {
       "nom": "Donuts Verde Limón",
@@ -86,7 +129,12 @@
       "description": "Glaçage : citron vert, zeste et piment.",
       "prix": "3.50€",
       "calories": "290 kcal",
-      "allergenes": "Gluten, Oeufs, Lait"
+      "allergenes": "Gluten, Oeufs, Lait",
+      "tags": [
+        "sucre",
+        "epice",
+        "vegetarien"
+      ]
     },
     {
       "nom": "Agua de Jamaica",
@@ -94,7 +142,14 @@
       "description": "Eau et sirop d'hibiscus.",
       "prix": "3.00€",
       "calories": "80 kcal",
-      "allergenes": "Aucun"
+      "allergenes": "Aucun",
+      "tags": [
+        "sucre",
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "halal"
+      ]
     },
     {
       "nom": "Piña Brava",
@@ -102,7 +157,15 @@
       "description": "Jus d'ananas, gingembre, pointe de piment.",
       "prix": "3.50€",
       "calories": "110 kcal",
-      "allergenes": "Aucun"
+      "allergenes": "Aucun",
+      "tags": [
+        "sucre",
+        "epice",
+        "vegan",
+        "vegetarien",
+        "sans_gluten",
+        "halal"
+      ]
     },
     {
       "nom": "La Clásica Margarita",
@@ -110,7 +173,13 @@
       "description": "Tequila, triple sec et jus de citron vert.",
       "prix": "5.50€",
       "calories": "200 kcal",
-      "allergenes": "Aucun"
+      "allergenes": "Aucun",
+      "tags": [
+        "sucre",
+        "vegan",
+        "vegetarien",
+        "sans_gluten"
+      ]
     },
     {
       "nom": "Chocolate Caliente",
@@ -118,7 +187,14 @@
       "description": "Chocolat noir fondu, lait et pointe de piment.",
       "prix": "3.50€",
       "calories": "150 kcal",
-      "allergenes": "Lait"
+      "allergenes": "Lait",
+      "tags": [
+        "sucre",
+        "epice",
+        "vegetarien",
+        "sans_gluten",
+        "halal"
+      ]
     }
   ],
   "menus": [
@@ -244,6 +320,6 @@
       "livreur": "Brigitte R.",
       "paiement": "Non payé"
     }
-  ]
+  ],
   "tickets": []
 }
