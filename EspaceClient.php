@@ -58,8 +58,15 @@ $commandes = $data["commandes"];
         </div>
 
         <p class="commontxt2"> <?= $commande["date"] ?> à <?= $commande["heure"] ?></p>
-        <p class="commontxt2">Statut : <?= $commande["statut"] ?></p>
-        <p class="commontxt2">Livreur : <?= $commande["livreur"] ?></p>
+        <p class="commontxt2">Statut: <?= $commande["statut"] ?></p>
+       <p class="commontxt2">Livreur: <?= $commande["livreur"] ?></p>
+        <p class="commontxt2">Paiement: <?= $commande["paiement"] ?></p>
+ 
+        <!-- Bouton modifier ssi la commande en attente&payée -->
+        <?php if ($commande["statut"]=== "En attente"&& $commande["paiement"]=== "Payé") : ?>
+            <button class="button-17"
+                    onclick="location.href='modifier_commande.php?numero=<?= $commande["numero"] ?>'"> Modifier la commande </button>
+        <?php endif; ?>
 
         <!-- Si la commande est livrée, le client peut la noter -->
         <?php if ($commande["statut"] === "Livrée") : ?>
