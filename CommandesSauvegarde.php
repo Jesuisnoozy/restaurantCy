@@ -7,7 +7,7 @@ if (!isset($_SESSION['pseudo'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: client.php');
+    header('Location: EspaceClient.php');
     exit;
 }
 
@@ -17,15 +17,15 @@ $numero= intval($_POST['numero'] ?? 0);
 
 //trouver la commande
 $index =null;
-foreach ($data["commandes"] as $i=> $cmd) {
-    if ($cmd["numero"]=== $numero) {
+foreach ($data["commandes"] as $i=> $cmd){
+    if ($cmd["numero"]=== $numero){
         $index= $i;
         break;
     }
 }
 
 if ($index===null) {
-    header('Location: client.php?erreur=Commande introuvable.');
+    header('Location: EspaceClient.php?erreur=Commande introuvable.');
     exit;
 }
 
@@ -41,12 +41,12 @@ foreach ($data["plats"] as $plat) {
 }
 
 //Récup nouveaux plats
-$plats_choisis= [];
+$plats_choisis=[];
 $prix_nouveau= 0;
-foreach ($data["plats"] as $plat) {
+foreach ($data["plats"] as $plat){
     $nom_champ= 'plat_' . $plat["nom"];
     $quantite= intval($_POST[$nom_champ] ?? 0);
-    if ($quantite > 0) {
+    if ($quantite > 0){
         $plats_choisis[]= $quantite . 'x ' . $plat["nom"];
         $prix_nouveau+= $quantite * floatval(str_replace('€', '', $plat["prix"]));
     }
@@ -62,11 +62,11 @@ $data["commandes"][$index]["plats"] = implode('+', $plats_choisis);
 
 // Si -chere -> genere un ticket de réduction
 $difference= $prix_nouveau- $prix_ancien;
-$message= 'Commande n°' . $numero . ' modifiée avec succès !';
+$message='Commande n°' . $numero . ' modifiée avec succès !';
 
-if ($difference< 0) {
+if ($difference< 0){
     // ajout ticket dans le JSON
-    $ticket = [
+    $ticket=[
         "client"=> $_SESSION['pseudo'],
         "montant"=> abs($difference),
         "utilise"=> false
@@ -81,6 +81,6 @@ file_put_contents(
     json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)
 );
 
-header('Location: client.php?message=' . urlencode($message));
+header('Location: EspaceClient.php?message=' . urlencode($message));
 exit;
 ?>
