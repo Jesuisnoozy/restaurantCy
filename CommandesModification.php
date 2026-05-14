@@ -7,7 +7,7 @@ if (!isset($_SESSION['pseudo'])){
 }
 
 $numero= intval($_GET['numero'] ?? 0);
-$fichier= 'data/PMC.json';
+$fichier='data/PMC.json';
 $data= json_decode(file_get_contents($fichier), true);
 $plats= $data["plats"];
 
