@@ -53,7 +53,7 @@ foreach ($data["plats"] as $plat){
 }
 
 if (empty($plats_choisis)) {
-    header('Location: modifier_commande.php?numero=' . $numero . '&erreur=Vous devez choisir au moins un plat.');
+    header('Location: CommandesModification.php?numero=' . $numero . '&erreur=Vous devez choisir au moins un plat.');
     exit;
 }
 
