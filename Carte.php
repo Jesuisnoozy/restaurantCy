@@ -169,12 +169,11 @@ function afficherPlats(plats) {
         ;
     });
     html+="</section>";
- 
-    zone.innerHTML= html;
+     zone.innerHTML= html;
 }
  
 //recherche
-function rechercherPlat() {
+function rechercherPlat(){
     const recherche= document.getElementById("recherche").value.toLowerCase();
     const articles= document.querySelectorAll("article");
  
