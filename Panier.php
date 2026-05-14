@@ -33,7 +33,7 @@ $menus = $data["menus"];
     <br/>
 
     <!-- Formulaire de commande -->
-    <form method="post" action="valider_commande.php">
+    <form method="post" action="PanierValidation.php">
         <input type="hidden" name="client" value="<?= $_SESSION['pseudo'] ?>"/>
 
         <!-- 1: Choisir des plats -->
