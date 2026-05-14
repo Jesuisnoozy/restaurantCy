@@ -47,9 +47,9 @@ foreach ($plats as $plat) {
     <div class="header-title">Le Goupix</div>
     <img src="goupix.webp"/>
     <nav class="header-navigation">
-        <button onclick="location.href='carte.php'">La carte</button>
-        <button onclick="location.href='menus.php'">Les menus</button>
-        <button onclick="location.href='panier.php'">Panier</button>
+        <button onclick="location.href='Carte.php'">La carte</button>
+        <button onclick="location.href='Menus.php'">Les menus</button>
+        <button onclick="location.href='Panier.php'">Panier</button>
         <button onclick="location.href='compte.php'">Compte</button>
     </nav>
 </header>
