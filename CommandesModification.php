@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['pseudo'])) {
+if (!isset($_SESSION['pseudo'])){
     header('Location: connexion.php');
     exit;
 }
@@ -14,22 +14,22 @@ $plats= $data["plats"];
 //trouver la commande
 $commande = null;
 foreach ($data["commandes"] as $cmd) {
-    if ($cmd["numero"]=== $numero) {
+    if ($cmd["numero"]=== $numero){
         $commande = $cmd;
         break;
     }
 }
 
 //Verif commande modifiable ok
-if ($commande=== null || $commande["statut"]!== "En attente"||$commande["paiement"]!== "Payé") {
-    header('Location: client.php?erreur=Cette commande ne peut pas être modifiée.');
+if ($commande=== null || $commande["statut"]!== "En attente"||$commande["paiement"]!== "Payé"){
+    header('Location: EspaceClient.php?erreur=Cette commande ne peut pas être modifiée.');
     exit;
 }
 
 $prix_actuel = 0;
 foreach ($plats as $plat) {
     $prix = floatval(str_replace('€', '', $plat["prix"]));
-    if (preg_match('/(\d+)x ' . preg_quote($plat["nom"], '/') . '/', $commande["plats"], $match)) {
+    if (preg_match('/(\d+)x ' . preg_quote($plat["nom"], '/') . '/', $commande["plats"], $match)){
         $prix_actuel += intval($match[1]) * $prix;
     }
 }
