@@ -2,7 +2,7 @@
 $role_requis = 'restaurateur';
 
 $fichier_pmc  = 'data/PMC.json';
-$data         = json_decode(file_get_contents($fichier_pmc), true);
+$data= json_decode(file_get_contents("data/PMC.json"), true);
 $plats        = $data['plats'];
 $menus        = $data['menus'];
 $commandes    = $data['commandes'];
