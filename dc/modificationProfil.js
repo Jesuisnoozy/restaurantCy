@@ -1,0 +1,209 @@
+/**
+ * 
+ * Gère la modification du profil utilisateur en asynchrone
+ *
+ */
+
+// first
+function ouvrirModalModifier() {
+    const modal = document.getElementById('maroc');
+    if (modal) {
+        modal.style.display = 'flex';
+        setTimeout(() => modal.classList.add('visible'), 10);
+    }
+}
+
+// nan c moi le first 
+function fermerModalModifier() {
+    const modal = document.getElementById('maroc');
+    if (modal) {
+        modal.classList.remove('visible');
+        setTimeout(() => {
+            modal.style.display = 'none';
+        }, 300);
+    }
+}
+
+// Nan moi c'est henry et vous ? 
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('maroc');
+    if (modal) {
+        modal.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                fermerModalModifier();
+            }
+        });
+    }
+    
+    // qui t'a demandé de parler ? 
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            fermerModalModifier();
+        }
+    });
+});
+
+// moi !!!! 
+async function soumettreModification(event) {
+    event.preventDefault();
+
+    const form = document.getElementById('formulaire-maroc');
+    const nouveauNom = document.getElementById('nouveau_nom').value.trim();
+    const nouvelEmail = document.getElementById('nouveau_email').value.trim();
+    const nouveauTelephone = document.getElementById('nouveau_telephone').value.trim();
+    const nouvelleAdresse = document.getElementById('nouvelle_adresse').value.trim();
+    const nouveauRole = document.getElementById('nouveau_role').value.trim();
+    const pseudo = document.getElementById('pseudo-cache').value;
+
+    const erreurs = validerFormulaire(nouveauNom, nouvelEmail, nouveauTelephone);
+    if (erreurs.length > 0) {
+        afficherErreurs(erreurs);
+        return;
+    }
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const texteOriginal = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = '⏳ Mise à jour...';
+
+    try {
+        const response = await fetch('modifyProfile.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                pseudo: pseudo,
+                nouveau_nom: nouveauNom,
+                nouveau_email: nouvelEmail,
+                nouveau_telephone: nouveauTelephone,
+                nouvelle_adresse: nouvelleAdresse,
+                nouveau_role: nouveauRole
+            })
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+            afficherToast(result.message, 'success');
+            mettreAJourAffichage(result.user);
+
+            setTimeout(() => {
+                fermerModalModifier();
+                setTimeout(() => {
+                    location.reload();
+                }, 300);
+            }, 1500);
+
+        } else {
+            if (result.erreurs && Array.isArray(result.erreurs)) {
+                afficherErreurs(result.erreurs);
+            } else {
+                afficherToast(result.message, 'error');
+            }
+            submitBtn.disabled = false;
+            submitBtn.textContent = texteOriginal;
+        }
+
+    } catch (error) {
+        console.error('Erreur:', error);
+        afficherToast('Erreur de connexion', 'error');
+        submitBtn.disabled = false;
+        submitBtn.textContent = texteOriginal;
+    }
+}
+
+// ça va fonctionner ? 
+function validerFormulaire(nom, email, telephone) {
+    const erreurs = [];
+
+    if (!nom || nom.length < 2) {
+        erreurs.push('Le nom doit contenir au moins 2 caractères');
+    }
+
+    if (!email || !email.includes('@')) {
+        erreurs.push('Email invalide');
+    }
+
+    if (telephone && !/^[0-9\s\-\+\.()]+$/.test(telephone)) {
+        erreurs.push('Numéro de téléphone invalide');
+    }
+
+    return erreurs;
+}
+
+// y'a une erreur ? 
+function afficherErreurs(erreurs) {
+    const container = document.getElementById('egypte');
+    container.innerHTML = '';
+    container.style.display = 'block';
+
+    const div = document.createElement('div');
+    
+    erreurs.forEach(erreur => {
+        const p = document.createElement('p');
+        p.style.color = '#c33';
+        p.style.fontSize = '13px';
+        p.style.lineHeight = '1.5';
+        p.style.margin = '6px 0';
+        p.textContent = '❌ ' + erreur;
+        div.appendChild(p);
+    });
+
+    container.appendChild(div);
+    container.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+// si y'en a pas, bon bah gg 
+function mettreAJourAffichage(user) {
+    const nomElement = document.getElementById('afficher-nom');
+    const emailElement = document.getElementById('afficher-email');
+    const telephoneElement = document.getElementById('afficher-telephone');
+    const adresseElement = document.getElementById('afficher-adresse');
+
+    if (nomElement) nomElement.textContent = user.nom;
+    if (emailElement) emailElement.textContent = user.email;
+    if (telephoneElement) telephoneElement.textContent = user.telephone || '—';
+    if (adresseElement) adresseElement.textContent = user.adresse || '—';
+}
+
+// vous aimez les toasts ? 
+function afficherToast(message, type) {
+    const toast = document.createElement('div');
+    toast.className = `notification-maroc notification-${type}`;
+    toast.textContent = message;
+    toast.style.position = 'fixed';
+    toast.style.bottom = '-100px';
+    toast.style.right = '20px';
+    toast.style.padding = '16px 20px';
+    toast.style.borderRadius = '6px';
+    toast.style.color = 'white';
+    toast.style.fontWeight = '600';
+    toast.style.fontSize = '14px';
+    toast.style.zIndex = '1001';
+    toast.style.transition = 'bottom 0.3s ease';
+    toast.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+    
+    if (type === 'success') {
+        toast.style.background = '#4caf50';
+    } else {
+        toast.style.background = '#ff6b6b';
+    }
+
+    document.body.appendChild(toast);
+
+    setTimeout(() => toast.style.bottom = '20px', 10);
+
+    setTimeout(() => {
+        toast.style.bottom = '-100px';
+        setTimeout(() => toast.remove(), 300);
+    }, 4000);
+}
+
+// fin 
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('formulaire-maroc');
+    if (form) {
+        form.addEventListener('submit', soumettreModification);
+    }
+});

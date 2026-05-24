@@ -1,0 +1,81 @@
+[
+    {
+        "nom": "rendyrendy",
+        "email": "arobase@mail.com",
+        "pseudo": "addvv",
+        "mot_de_passe": "$2y$12$ZNQUxuflkBTkSKLm1smKqeF7KucnU3EuEah7sHlPQKEWIUklmqSvm",
+        "role": "admin",
+        "statut": "actif",
+        "vip": false,
+        "reduction_vip": 0,
+        "raison_suspension": ""
+    },
+    {
+        "nom": "ouiiiiidd",
+        "email": "PROFDINFO@gmail.com",
+        "pseudo": "azert",
+        "mot_de_passe": "$2y$12$O9y2Xeb4cx7VezXTLvH.X.TbBpAOZRG956LMnBm1Vc81B\/ALoar.K",
+        "role": "client",
+        "statut": "actif",
+        "vip": false,
+        "reduction_vip": 0,
+        "raison_suspension": ""
+    },
+    {
+        "nom": "ccccccccccc",
+        "email": "PROFDINfefefefefFO@gmail.com",
+        "pseudo": "kkk",
+        "mot_de_passe": "$2y$12$6NxHGaKu7aihsBi0vmPWTOC4hYwYM\/lVCrkHzfSJ\/si\/zOaGPiuMW",
+        "role": "client",
+        "statut": "suspendu_def",
+        "vip": false,
+        "reduction_vip": 0,
+        "raison_suspension": "cccaaa"
+    },
+    {
+        "nom": "petit bg",
+        "email": "salut@gmail.com",
+        "pseudo": "ecede",
+        "mot_de_passe": "$2y$12$RklamBN0LKvDSN4tEG4\/1OTyieQnPEHmr3h5r3vwc\/od\/gQ.oASmO",
+        "role": "restaurateur",
+        "statut": "actif",
+        "vip": false,
+        "reduction_vip": 0,
+        "raison_suspension": "",
+        "date_modification": "2026-05-24 08:13:36"
+    },
+    {
+        "nom": "dcc",
+        "email": "PROFDINFOf@gmail.com",
+        "pseudo": "pop",
+        "mot_de_passe": "$2y$12$jZB5Iz32a7c52GvtKerNmu0QJyE7XbUmzF4gmYOf9POg0pSfD7UDe",
+        "role": "client",
+        "statut": "actif",
+        "vip": false,
+        "reduction_vip": 0,
+        "raison_suspension": ""
+    },
+    {
+        "nom": "dcccd",
+        "email": "ahok@gmail.com",
+        "pseudo": "popee",
+        "mot_de_passe": "$2y$12$UdA6j7LqZKsCVXbf\/Kqd6ehCbsqrkwHsMlDtN6bh7SScDLdU7h7hu",
+        "role": "restaurateur",
+        "statut": "actif",
+        "vip": false,
+        "reduction_vip": 0,
+        "raison_suspension": ""
+    },
+    {
+        "nom": "rfgrgrgr",
+        "email": "tume@gmail.com",
+        "pseudo": "aazzee",
+        "mot_de_passe": "$2y$12$UyPHkgBD96CFtzhYtMg47OO5\/M8FjLi370wJINjc2SDc4WwBfdD4a",
+        "role": "restaurateur",
+        "statut": "actif",
+        "vip": false,
+        "reduction_vip": 0,
+        "raison_suspension": "",
+        "date_modification": "2026-05-24 10:43:46"
+    }
+]

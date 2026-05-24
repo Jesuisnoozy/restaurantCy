@@ -1,0 +1,75 @@
+[
+    {
+        "nom": "caca",
+        "email": "aouallirendy@gmail.com",
+        "pseudo": "cacaca",
+        "mot_de_passe": "$2y$12$\/NTlwFEpUUX8vJjt96E9w.PtFG4aomOA9wPvCt\/6bdk3AE9KX48su",
+        "role": "admin"
+    },
+    {
+        "nom": "dfefsdf",
+        "email": "dfnfhfhj@gmail.com",
+        "pseudo": "dfdvsdvd",
+        "mot_de_passe": "$2y$12$zPgqj\/KjEHdDcxrYEgWN0esBpuBkzAnPez869tp8kHvJaBpm2CsJm",
+        "role": "client",
+        "statut": "actif",
+        "vip": true,
+        "reduction_vip": 25,
+        "raison_suspension": ""
+    },
+    {
+        "nom": "aaaaaaa",
+        "email": "a@gmail.com",
+        "pseudo": "aaa",
+        "mot_de_passe": "$2y$12$y2BadUYPL4j81Wkx9t\/10.eLFSwR7ryO5aEuhw1KYUVOYU3fJ6Qay",
+        "role": "admin",
+        "statut": "actif",
+        "vip": false,
+        "reduction_vip": 0,
+        "raison_suspension": ""
+    },
+    {
+        "nom": "vcvcvfv",
+        "email": "fvfvfvfv@gmail.com",
+        "pseudo": "vfvfdvdfv",
+        "mot_de_passe": "$2y$12$e6xM2qduy.aHD0\/uIq0AhOIPb3\/vguNSlV7iNzMaMX3kqZh0CU1fG",
+        "role": "client",
+        "statut": "actif",
+        "vip": false,
+        "reduction_vip": 0,
+        "raison_suspension": ""
+    },
+    {
+        "nom": "ZIZOU",
+        "email": "vfAZEvfdvdfvfdfdff@gmail.COM",
+        "pseudo": "BGBGBGDU95",
+        "mot_de_passe": "$2y$12$ArtG7zlA6xusrih55mKVH.clhmQh\/qGEi0RkC1WHHCJLrF5Npd2ye",
+        "role": "restaurateur",
+        "statut": "actif",
+        "vip": false,
+        "reduction_vip": 0,
+        "raison_suspension": ""
+    },
+    {
+        "nom": "eva ansermin",
+        "email": "evansermin@gmail.com",
+        "pseudo": "PROFDINFO",
+        "mot_de_passe": "$2y$12$AzvEAalyGIeoXtJODR3OUuXP\/duUnsXN7ytDoSYuI3j0GFQ4QNW.6",
+        "role": "admin",
+        "statut": "actif",
+        "vip": false,
+        "reduction_vip": 0,
+        "raison_suspension": ""
+    },
+    {
+        "nom": "bgbgbg",
+        "email": "PROFDINFO@gmail.com",
+        "pseudo": "salut",
+        "mot_de_passe": "$2y$12$B8Dnnsblf65H8LeQVGuH0eqA8Oiw\/\/xQf7YUUTzeKc5YVdb5mEl7a",
+        "role": "client",
+        "statut": "actif",
+        "vip": false,
+        "reduction_vip": 0,
+        "raison_suspension": ""
+    }
+]
