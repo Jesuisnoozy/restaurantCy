@@ -38,3 +38,18 @@ Certaines sécurités ont peut être été oubliés sur certaines pages
 vu qu'on peut pas utiliser de script shell, certaines commandes sont limités 
 
 
+Phase 3
+
+Cette phase a été assez difficile puisque pour des raisons personnelles raphael n'a pas pu travailler avec nous 
+
+Ce que j'ai fait 
+Rendy : tout code avec une fonction js asyncrone 
+Maelys : le reste 
+
+
+On a eu beaucoup de problème pendant cette partie, certaines partie n'ont pas été totalement implémentées (comme le mode sombre / claire qui fonctionne uniquement pour 2 Pages, ça sera régler pour la phase 4 ) ou les modifications commades et pour le livreur qui ne fonctionne pas (on a délégué ça au restaurateur) 
+
+par ailleurs on peut modifier le profil et le role directement, on va enlever la fonctionnalité pour plus tard, c'était tout simplement pour tester plus rapidement le code
+
+
+
