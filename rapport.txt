@@ -51,5 +51,15 @@ On a eu beaucoup de problème pendant cette partie, certaines partie n'ont pas �
 
 par ailleurs on peut modifier le profil et le role directement, on va enlever la fonctionnalité pour plus tard, c'était tout simplement pour tester plus rapidement le code
 
+Phase 4 : 
+
+Pour des raisons personnels on a pas eu le temps de travailler sur cette phase et beaucoup de morceau de code qu'on devait faire vont être reporté
+
+Rendy (moi) a corrigé encore les bugs du codes de maelys , et améliorer le dark mode
+
+Raphael n'a pas encore avancé sur le Css (c'est triste)
+
+Maelys a rien fait car j'avais trop la flemme de débugger son code 
+
 
 
