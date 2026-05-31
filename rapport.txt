@@ -62,4 +62,7 @@ Raphael n'a pas encore avancé sur le Css (c'est triste)
 Maelys a rien fait car j'avais trop la flemme de débugger son code 
 
 
+On va faire un commit pendant la prochaine semaine pour tout mettre, malheuresement entre les partiels ici et à supmeca + problèmes personnes pour moi et raphael on a pas pu tout finir, on s'excuse pour le retard occasionnée :))
+
+
 
