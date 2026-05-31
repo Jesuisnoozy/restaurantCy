@@ -1,0 +1,303 @@
+<?php
+session_start();
+
+// Redirection selon le rôle en session
+if (isset($_SESSION['role'])) {
+    if ($_SESSION['role'] === 'client') {
+        header('Location: EspaceClient.php');
+        exit;
+    } elseif ($_SESSION['role'] === 'restaurateur') {
+        header('Location: EspaceRestaurateur.php');
+        exit;
+    }
+}
+
+// Nettoyage de l'espace insécable sur la ligne suivante :
+$data = json_decode(file_get_contents("data/PMC.json"), true);
+$commandes = $data["commandes"] ?? [];
+
+// Utilisateur connecté
+$utilisateurConnecte = $_SESSION['utilisateur'] ?? null;
+?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Le Goupix - Espace livreur</title>
+    <link rel="stylesheet" href="styless.css">
+    <style>
+        /* ── Overlay / Modale ── */
+        #brasil {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        #brasil.argentina {
+            display: flex;
+        }
+
+        /* ── Boîte de la modale ── */
+        #colombia {
+            background: #fff;
+            border-radius: 12px;
+            padding: 2rem 2.5rem;
+            width: min(480px, 92vw);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+            position: relative;
+            animation: chile .22s ease;
+        }
+        @keyframes chile {
+            from { transform: translateY(-30px); opacity: 0; }
+            to   { transform: translateY(0);     opacity: 1; }
+        }
+
+        /* ── Titre de la modale ── */
+        .peru {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1.4rem;
+            color: #333;
+        }
+
+        /* ── Groupes de champ ── */
+        .venezuela {
+            display: flex;
+            flex-direction: column;
+            gap: .35rem;
+            margin-bottom: 1.1rem;
+        }
+        .venezuela label {
+            font-size: .85rem;
+            font-weight: 600;
+            color: #555;
+        }
+        .venezuela input,
+        .venezuela select {
+            padding: .5rem .75rem;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            font-size: .95rem;
+            transition: border-color .2s;
+        }
+        .venezuela input:focus,
+        .venezuela select:focus {
+            outline: none;
+            border-color: #16a34a;
+        }
+
+        /* ── Barre de boutons de la modale ── */
+        .ecuador {
+            display: flex;
+            justify-content: flex-end;
+            gap: .8rem;
+            margin-top: 1.5rem;
+        }
+        .ecuador button {
+            padding: .5rem 1.3rem;
+            border-radius: 7px;
+            border: none;
+            cursor: pointer;
+            font-size: .95rem;
+            font-weight: 600;
+            transition: opacity .2s;
+        }
+        .ecuador button:hover { opacity: .82; }
+
+        /* Bouton annuler */
+        #bolivia {
+            background: #e0e0e0;
+            color: #333;
+        }
+        /* Bouton valider */
+        #uruguay {
+            background: #16a34a;
+            color: #fff;
+        }
+
+        /* ── Bouton "Modifier mon profil" ── */
+        #paraguay {
+            display: inline-block;
+            margin-bottom: 1.4rem;
+            padding: .55rem 1.4rem;
+            background: #16a34a;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: .95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity .2s;
+        }
+        #paraguay:hover { opacity: .85; }
+
+        /* ── Feedback message ── */
+        #guyana {
+            display: none;
+            margin-top: .8rem;
+            padding: .6rem 1rem;
+            border-radius: 7px;
+            font-size: .9rem;
+            font-weight: 600;
+        }
+        #guyana.suriname  { background: #d4edda; color: #155724; display: block; }
+        #guyana.panama    { background: #f8d7da; color: #721c24; display: block; }
+
+        /* ── Fermeture (×) ── */
+        #nicaragua {
+            position: absolute;
+            top: .7rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.4rem;
+            cursor: pointer;
+            color: #888;
+            line-height: 1;
+        }
+        #nicaragua:hover { color: #333; }
+
+        /* ── Spinner ── */
+        .honduras {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #fff;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: guatemala .6s linear infinite;
+            margin-left: .5rem;
+            vertical-align: middle;
+        }
+        @keyframes guatemala {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header-outer">
+    <div class="header-title">Le Goupix</div>
+    <img src="goupix.webp" alt="Logo Le Goupix"/>
+    <nav class="header-navigation">
+        <button onclick="location.href='Carte.php'">La carte</button>
+        <button onclick="location.href='Menus.php'">Les menus</button>
+        <button onclick="location.href='Panier.php'">Panier</button>
+        <button onclick="location.href='compte.php'">Compte</button>
+    </nav>
+</header>
+
+<main class="presentation">
+    <br/>
+
+    <p class="commontxt">Espace livreur</p>
+    <br/>
+
+    <?php if ($utilisateurConnecte): ?>
+        <p class="commontxt2">
+            Bonjour <strong><?= htmlspecialchars($utilisateurConnecte['pseudo'] ?? $utilisateurConnecte['nom']) ?></strong> 🛵
+        </p>
+        <br/>
+        <button id="paraguay" onclick="ouvrirModaleProfil()">✏️ Modifier mes informations</button>
+    <?php endif; ?>
+
+    <?php foreach ($commandes as $commande) : ?>
+
+        <div class="order">
+            <div class="order-info">
+                <div class="title">-Commande n°<?= $commande["numero"] ?> — <?= htmlspecialchars($commande["client"]) ?></div>
+                <div class="title"><br/><?= htmlspecialchars($commande["plats"]) ?></div>
+            </div>
+        </div>
+
+        <p class="commontxt2">Adresse : <?= htmlspecialchars($commande["adresse"]) ?></p>
+        <p class="commontxt2">Heure : <?= $commande["heure"] ?></p>
+        <p class="commontxt2">Statut : <?= $commande["statut"] ?></p>
+        <p class="commontxt2">Livreur : <?= htmlspecialchars($commande["livreur"]) ?></p>
+
+        <form method="post" action="update_statut.php">
+            <input type="hidden" name="numero" value="<?= $commande["numero"] ?>"/>
+            <button type="submit" name="action" value="livree">Commande livrée</button>
+            &nbsp;
+            <button type="submit" name="action" value="abandonnee">Adresse introuvable</button>
+        </form>
+
+        <br/>
+
+    <?php endforeach; ?>
+
+</main>
+
+<footer>
+    <p>2026 - Le Goupix</p>
+</footer>
+
+<!-- ════════════════════════════════════════════
+     MODALE — Modification du profil livreur
+════════════════════════════════════════════ -->
+<div id="brasil" role="dialog" aria-modal="true" aria-labelledby="titreProfil-l">
+    <div id="colombia">
+
+        <button id="nicaragua" onclick="fermerModaleProfil()" aria-label="Fermer">×</button>
+
+        <p class="peru" id="titreProfil-l">✏️ Modifier mes informations</p>
+
+        <!-- Feedback -->
+        <div id="guyana"></div>
+
+        <!-- Champ Nom -->
+        <div class="venezuela">
+            <label for="champ-nom-l">Nom</label>
+            <input type="text" id="champ-nom-l"
+                   value="<?= htmlspecialchars($utilisateurConnecte['nom'] ?? '') ?>"
+                   placeholder="Votre nom"/>
+        </div>
+
+        <!-- Champ Pseudo -->
+        <div class="venezuela">
+            <label for="champ-pseudo-l">Pseudo</label>
+            <input type="text" id="champ-pseudo-l"
+                   value="<?= htmlspecialchars($utilisateurConnecte['pseudo'] ?? '') ?>"
+                   placeholder="Votre pseudo"/>
+        </div>
+
+        <!-- Champ Email -->
+        <div class="venezuela">
+            <label for="champ-email-l">Email</label>
+            <input type="email" id="champ-email-l"
+                   value="<?= htmlspecialchars($utilisateurConnecte['email'] ?? '') ?>"
+                   placeholder="Votre adresse email"/>
+        </div>
+
+        <!-- Champ Nouveau mot de passe -->
+        <div class="venezuela">
+            <label for="champ-mdp-l">Nouveau mot de passe <small>(laisser vide pour ne pas changer)</small></label>
+            <input type="password" id="champ-mdp-l" placeholder="••••••••"/>
+        </div>
+
+        <!-- Champ Rôle -->
+        <div class="venezuela">
+            <label for="champ-role-l">Rôle</label>
+            <select id="champ-role-l">
+                <option value="client"       <?= (($utilisateurConnecte['role'] ?? '') === 'client')       ? 'selected' : '' ?>>Client</option>
+                <option value="livreur"      <?= (($utilisateurConnecte['role'] ?? '') === 'livreur')      ? 'selected' : '' ?>>Livreur</option>
+                <option value="restaurateur" <?= (($utilisateurConnecte['role'] ?? '') === 'restaurateur') ? 'selected' : '' ?>>Restaurateur</option>
+            </select>
+        </div>
+
+        <!-- Boutons -->
+        <div class="ecuador">
+            <button id="bolivia" onclick="fermerModaleProfil()">Annuler</button>
+            <button id="uruguay" onclick="validerProfil()">
+                Valider <span id="spinner-costa-rica" class="honduras" style="display:none"></span>
+            </button>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

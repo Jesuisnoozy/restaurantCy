@@ -1,0 +1,65 @@
+<?php
+session_start();
+
+// 1. Alignement sur la session de l'Espace Livreur
+if (!isset($_SESSION['utilisateur'])) {
+    // Si la session n'est pas trouvée, on est redirigé ici
+    header('Location: connexion.php');
+    exit;
+}
+
+// 2. Vérification de la méthode d'envoi
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header('Location: EspaceLivreur.php');
+    exit;
+}
+
+$fichier = 'data/PMC.json';
+
+if (!file_exists($fichier)) {
+    header('Location: EspaceLivreur.php?error=Fichier_introuvable');
+    exit;
+}
+
+// 3. Lecture du JSON
+$data = json_decode(file_get_contents($fichier), true);
+
+if (!isset($data["commandes"])) {
+    header('Location: EspaceLivreur.php?error=Cle_commandes_absente');
+    exit;
+}
+
+// 4. Récupération des données du formulaire (Conversion forcée en entier)
+$numero_recherche = isset($_POST['numero']) ? intval($_POST['numero']) : 0;
+$action = $_POST['action'] ?? '';
+
+$modifie = false;
+
+// 5. Parcours et modification (avec conversion en entier des deux côtés)
+foreach ($data["commandes"] as $i => $cmd) {
+    if (intval($cmd["numero"]) === $numero_recherche) {
+        if ($action === 'livree') {
+            $data["commandes"][$i]["statut"] = "Livrée";
+            $modifie = true;
+        } elseif ($action === 'abandonnee') {
+            $data["commandes"][$i]["statut"] = "Abandonnée";
+            $modifie = true;
+        }
+        break;
+    }
+}
+
+// 6. Sauvegarde et redirection
+if ($modifie) {
+    file_put_contents(
+        $fichier,
+        json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE),
+        LOCK_EX
+    );
+    header('Location: EspaceLivreur.php?message=Statut_mis_a_jour');
+} else {
+    // Permet de voir si le numéro envoyé n'existait pas dans le JSON
+    header('Location: EspaceLivreur.php?error=Commande_' . $numero_recherche . '_introuvable_dans_le_JSON');
+}
+exit;
+?>

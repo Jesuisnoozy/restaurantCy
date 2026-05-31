@@ -1,0 +1,490 @@
+/**
+ * 
+ * le mode sombre 
+ *
+ */
+
+
+body.mode-clair {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.mode-clair header,
+body.mode-clair .header-outer {
+    background-color: #f5f5f5;
+    color: #000000;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+body.mode-clair header nav a,
+body.mode-clair .header-navigation button {
+    color: #000000;
+    background-color: transparent;
+}
+
+body.mode-clair header nav a:hover,
+body.mode-clair .header-navigation button:hover {
+    background-color: #e0e0e0;
+    color: #000000;
+}
+
+body.mode-clair main {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.mode-clair p,
+body.mode-clair h1,
+body.mode-clair h2,
+body.mode-clair h3,
+body.mode-clair h4,
+body.mode-clair h5,
+body.mode-clair h6 {
+    color: #000000;
+}
+
+body.mode-clair .commontxt {
+    color: #000000;
+}
+
+body.mode-clair .commontxt2 {
+    color: #333333;
+}
+
+body.mode-clair .order {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+}
+
+body.mode-clair .order-info {
+    color: #000000;
+}
+
+body.mode-clair .order .title {
+    color: #000000;
+}
+
+body.mode-clair input[type="text"],
+body.mode-clair input[type="email"],
+body.mode-clair input[type="password"],
+body.mode-clair input[type="number"],
+body.mode-clair input[type="tel"],
+body.mode-clair input[type="datetime-local"],
+body.mode-clair textarea,
+body.mode-clair select {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #cccccc;
+}
+
+body.mode-clair input[type="text"]:focus,
+body.mode-clair input[type="email"]:focus,
+body.mode-clair input[type="password"]:focus,
+body.mode-clair input[type="number"]:focus,
+body.mode-clair input[type="tel"]:focus,
+body.mode-clair input[type="datetime-local"]:focus,
+body.mode-clair textarea:focus,
+body.mode-clair select:focus {
+    border-color: #4a90e2;
+    background-color: #ffffff;
+}
+
+body.mode-clair .button-17 {
+    background-color: #e87c2a;
+    color: #ffffff;
+    border: none;
+}
+
+body.mode-clair .button-17:hover {
+    background-color: #d66b1a;
+}
+
+body.mode-clair button {
+    color: #000000;
+}
+
+body.mode-clair .sarcelles {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+}
+
+body.mode-clair .gonesse {
+    background-color: #f5f5f5;
+    color: #000000;
+}
+
+body.mode-clair .ecouen {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.mode-clair .persan {
+    color: #000000;
+}
+
+body.mode-clair .beaumont {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+}
+
+body.mode-clair .beaumont span {
+    color: #666666;
+}
+
+body.mode-clair .beaumont strong {
+    color: #000000;
+}
+
+body.mode-clair .domont {
+    color: #000000;
+}
+
+body.mode-clair .enghien {
+    background-color: #fff3f3;
+    border: 1px solid #ffcccc;
+}
+
+body.mode-clair .enghien-header {
+    background-color: #ffcccc;
+    color: #c00000;
+}
+
+body.mode-clair .soisy {
+    color: #000000;
+}
+
+body.mode-clair .soisy p {
+    color: #000000;
+}
+
+body.mode-clair #maroc {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+body.mode-clair .senegal-compte {
+    background-color: #ffffff;
+    color: #000000;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+body.mode-clair .benin-compte h2 {
+    color: #000000;
+}
+
+body.mode-clair .benin-compte button {
+    color: #666666;
+}
+
+body.mode-clair .gabon label {
+    color: #000000;
+}
+
+body.mode-clair .gabon input,
+body.mode-clair .gabon textarea,
+body.mode-clair .gabon select {
+    background-color: #f9f9f9;
+    color: #000000;
+    border: 1px solid #cccccc;
+}
+
+body.mode-clair .gabon input:focus,
+body.mode-clair .gabon textarea:focus,
+body.mode-clair .gabon select:focus {
+    background-color: #ffffff;
+    border-color: #4a90e2;
+}
+
+body.mode-clair #egypte {
+    background-color: #fee;
+    border: 1px solid #fcc;
+    color: #c33;
+}
+
+body.mode-clair .kenya-compte {
+    color: #000000;
+}
+
+body.mode-clair .btn-annuler {
+    background-color: #e0e0e0;
+    color: #000000;
+}
+
+body.mode-clair .btn-annuler:hover {
+    background-color: #d0d0d0;
+}
+
+body.mode-clair .btn-valider {
+    background-color: #4a90e2;
+    color: #ffffff;
+}
+
+body.mode-clair .btn-valider:hover {
+    background-color: #357abd;
+}
+
+body.mode-clair footer {
+    background-color: #f5f5f5;
+    color: #000000;
+    border-top: 1px solid #e0e0e0;
+}
+
+body.mode-clair .taverny-actif {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+body.mode-clair .luzarches {
+    background-color: #cfe2ff;
+    color: #084298;
+}
+
+
+body.mode-clair .restaurateur-intro {
+    background-color: #f5f5f5;
+    color: #000000;
+    border: 1px solid #e0e0e0;
+}
+
+body.mode-clair .restaurateur-intro p {
+    color: #000000;
+}
+
+body.mode-clair .meaux {
+    color: #000000;
+}
+
+body.mode-clair .evry95 {
+    color: #000000;
+}
+
+body.mode-clair .draveil {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+}
+
+body.mode-clair .draveil-label {
+    color: #666666;
+}
+
+body.mode-clair .draveil-nombre {
+    color: #000000;
+}
+
+body.mode-clair .chartres {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+}
+
+body.mode-clair .fontainebleau {
+    background-color: #f5f5f5;
+    color: #000000;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+body.mode-clair .rambouillet {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+body.mode-clair .grigny {
+    color: #999999;
+}
+
+body.mode-clair .mantes {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+}
+
+body.mode-clair .poissy {
+    color: #000000;
+}
+
+body.mode-clair .numero-commande {
+    color: #000000;
+}
+
+body.mode-clair .conflans {
+    color: #ffffff;
+}
+
+body.mode-clair .argentan {
+    color: #ffffff;
+}
+
+body.mode-clair .houilles {
+    color: #000000;
+}
+
+body.mode-clair .houilles p {
+    color: #000000;
+}
+
+body.mode-clair .ozoir {
+    color: #000000;
+    font-weight: 600;
+}
+
+body.mode-clair .noisiel {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+}
+
+body.mode-clair .noisiel-nom {
+    color: #000000;
+}
+
+body.mode-clair .noisiel-prix {
+    color: #666666;
+}
+
+body.mode-clair .torcy-dispo {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+body.mode-clair .torcy-indispo {
+    background-color: #f8d7da;
+    color: #842029;
+}
+
+/* Formulaire */
+body.mode-clair .puteaux {
+    color: #000000;
+}
+
+body.mode-clair .puteaux label {
+    color: #000000;
+    font-weight: 600;
+}
+
+body.mode-clair .puteaux input,
+body.mode-clair .puteaux textarea,
+body.mode-clair .puteaux select {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #cccccc;
+}
+
+body.mode-clair .puteaux input:focus,
+body.mode-clair .puteaux textarea:focus,
+body.mode-clair .puteaux select:focus {
+    border-color: #4a90e2;
+}
+
+body.mode-clair .puteaux button {
+    background-color: #e87c2a;
+    color: #ffffff;
+}
+
+body.mode-clair .puteaux button:hover {
+    background-color: #d66b1a;
+}
+
+/* Modale restaurateur */
+body.mode-clair #modal-profil-restaurateur {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+body.mode-clair #modal-box-restaurateur {
+    background-color: #ffffff;
+    color: #000000;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+body.mode-clair .modal-title {
+    color: #000000;
+}
+
+body.mode-clair .modal-close {
+    color: #666666;
+}
+
+body.mode-clair .modal-field label {
+    color: #000000;
+    font-weight: 600;
+}
+
+body.mode-clair .modal-field input,
+body.mode-clair .modal-field select {
+    background-color: #f9f9f9;
+    color: #000000;
+    border: 1px solid #cccccc;
+}
+
+body.mode-clair .modal-field input:focus,
+body.mode-clair .modal-field select:focus {
+    background-color: #ffffff;
+    border-color: #4a90e2;
+}
+
+body.mode-clair .modal-btn-cancel {
+    background-color: #e0e0e0;
+    color: #000000;
+}
+
+body.mode-clair .modal-btn-cancel:hover {
+    background-color: #d0d0d0;
+}
+
+body.mode-clair .modal-btn-submit-restaurateur {
+    background-color: #4a90e2;
+    color: #ffffff;
+}
+
+body.mode-clair .modal-btn-submit-restaurateur:hover {
+    background-color: #357abd;
+}
+
+#toggle-mode-theme {
+    padding: 8px 16px;
+    background-color: #e87c2a;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: 15px;
+}
+
+#toggle-mode-theme:hover {
+    background-color: #d66b1a;
+    transform: translateY(-2px);
+}
+
+body.mode-clair #toggle-mode-theme {
+    background-color: #4a90e2;
+    color: #ffffff;
+}
+
+body.mode-clair #toggle-mode-theme:hover {
+    background-color: #357abd;
+}
+
+body.mode-clair .rosny {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+body.mode-clair .sartrouville {
+    background-color: #f8d7da;
+    color: #842029;
+    border: 1px solid #f5c6cb;
+}
+
+body.mode-clair .menu-creneaux {
+    color: #999999;
+    font-size: 0.85em;
+}
+
+body.mode-clair .lognes {
+    background-color: #e87c2a;
+    color: #ffffff;
+}
+
+body.mode-clair .lognes:hover {
+    background-color: #d66b1a;
+}

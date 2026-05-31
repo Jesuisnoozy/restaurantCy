@@ -1,0 +1,218 @@
+/**
+ * Système de gestion asynchrone du blocage/déblocage d'utilisateurs
+ * Appelé depuis la page admin avec des requêtes AJAX
+ */
+
+class GestionnaireUtilisateurs {
+    constructor() {
+        this.apiUrl = 'api_bloquer_utilisateur.php';
+        this.initListeners();
+    }
+
+    /**
+     * Initialiser les event listeners pour les boutons de blocage/déblocage
+     */
+    initListeners() {
+        // Boutons de blocage (dynamiques)
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('btn-bloquer')) {
+                const pseudo = e.target.dataset.pseudo;
+                this.bloquerUtilisateur(pseudo, e.target);
+            }
+            
+            if (e.target.classList.contains('btn-debloquer')) {
+                const pseudo = e.target.dataset.pseudo;
+                this.debloquerUtilisateur(pseudo, e.target);
+            }
+        });
+    }
+
+    /**
+     * Bloquer un utilisateur
+     * @param {string} pseudo - Le pseudo de l'utilisateur à bloquer
+     * @param {HTMLElement} bouton - Le bouton qui a déclenché l'action
+     */
+    async bloquerUtilisateur(pseudo, bouton) {
+        // Confirmation
+        if (!confirm(`⚠️ Êtes-vous sûr de vouloir bloquer "${pseudo}" ?\n\nSa session sera terminée immédiatement.`)) {
+            return;
+        }
+
+        await this.envoirRequete('bloquer', pseudo, bouton);
+    }
+
+    /**
+     * Débloquer un utilisateur
+     * @param {string} pseudo - Le pseudo de l'utilisateur à débloquer
+     * @param {HTMLElement} bouton - Le bouton qui a déclenché l'action
+     */
+    async debloquerUtilisateur(pseudo, bouton) {
+        if (!confirm(`Êtes-vous sûr de vouloir débloquer "${pseudo}" ?`)) {
+            return;
+        }
+
+        await this.envoirRequete('debloquer', pseudo, bouton);
+    }
+
+    /**
+     * Envoyer la requête asynchrone au serveur
+     * @param {string} action - 'bloquer' ou 'debloquer'
+     * @param {string} pseudo - Le pseudo de l'utilisateur
+     * @param {HTMLElement} bouton - Le bouton pour afficher le feedback
+     */
+    async envoirRequete(action, pseudo, bouton) {
+        const container = bouton.closest('.card-user') || bouton.closest('.pontoise');
+        const messageDiv = container ? container.querySelector('.message-feedback') : null;
+
+        // Créer un élément de feedback s'il n'existe pas
+        const feedback = messageDiv || this.creerMessageFeedback();
+        if (!messageDiv) {
+            bouton.parentElement.insertBefore(feedback, bouton.nextSibling);
+        }
+
+        // Afficher le chargement
+        feedback.innerHTML = '⏳ Traitement en cours...';
+        feedback.className = 'message-feedback loading';
+        bouton.disabled = true;
+
+        try {
+            const formData = new FormData();
+            formData.append('action', action);
+            formData.append('pseudo', pseudo);
+
+            const response = await fetch(this.apiUrl, {
+                method: 'POST',
+                body: formData
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                // Succès ✅
+                feedback.innerHTML = `✅ ${data.message}`;
+                feedback.className = 'message-feedback success';
+
+                // Mettre à jour l'interface
+                this.mettreAJourInterface(pseudo, action);
+
+                // Masquer le message après 3 secondes
+                setTimeout(() => {
+                    feedback.style.opacity = '0';
+                    setTimeout(() => feedback.remove(), 300);
+                }, 3000);
+            } else {
+                // Erreur ❌
+                feedback.innerHTML = `❌ ${data.message}`;
+                feedback.className = 'message-feedback error';
+                bouton.disabled = false;
+            }
+        } catch (erreur) {
+            console.error('Erreur réseau:', erreur);
+            feedback.innerHTML = `❌ Erreur de connexion au serveur.`;
+            feedback.className = 'message-feedback error';
+            bouton.disabled = false;
+        }
+    }
+
+    /**
+     * Créer un élément de feedback visuel
+     */
+    creerMessageFeedback() {
+        const div = document.createElement('div');
+        div.className = 'message-feedback';
+        div.style.cssText = `
+            padding: 12px 16px;
+            margin: 12px 0;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        `;
+        return div;
+    }
+
+    /**
+     * Mettre à jour l'interface après l'action
+     * @param {string} pseudo - Le pseudo de l'utilisateur
+     * @param {string} action - 'bloquer' ou 'debloquer'
+     */
+    mettreAJourInterface(pseudo, action) {
+        // Trouver la carte utilisateur
+        const cards = document.querySelectorAll('[data-pseudo]');
+        let userCard = null;
+
+        cards.forEach(card => {
+            if (card.dataset.pseudo === pseudo) {
+                userCard = card;
+            }
+        });
+
+        if (!userCard) {
+            // Essayer une autre approche : chercher par pseudo dans le texte
+            document.querySelectorAll('.pontoise').forEach(card => {
+                if (card.textContent.includes(`@${pseudo}`)) {
+                    userCard = card;
+                }
+            });
+        }
+
+        if (userCard) {
+            if (action === 'bloquer') {
+                // Ajouter la classe suspendu_temp à la carte
+                const argenteuil = userCard.querySelector('.argenteuil');
+                if (argenteuil) {
+                    argenteuil.classList.add('suspendu_temp');
+                    argenteuil.classList.remove('actif');
+                }
+
+                // Trouver et remplacer les boutons
+                const btnBloquer = userCard.querySelector('.btn-bloquer');
+                if (btnBloquer) {
+                    const btnDebloquer = document.createElement('button');
+                    btnDebloquer.className = 'btn-debloquer pantin vitry';
+                    btnDebloquer.dataset.pseudo = pseudo;
+                    btnDebloquer.textContent = 'Débloquer';
+                    btnBloquer.replaceWith(btnDebloquer);
+                }
+
+                // Mettre à jour le badge de statut
+                const badgeActif = userCard.querySelector('.clamart-actif');
+                if (badgeActif) {
+                    badgeActif.textContent = 'Bloqué';
+                    badgeActif.classList.remove('clamart-actif');
+                    badgeActif.classList.add('clamart-temp');
+                }
+
+            } else if (action === 'debloquer') {
+                // Enlever la classe suspendu_temp
+                const argenteuil = userCard.querySelector('.argenteuil');
+                if (argenteuil) {
+                    argenteuil.classList.remove('suspendu_temp', 'suspendu_def');
+                    argenteuil.classList.add('actif');
+                }
+
+                // Trouver et remplacer les boutons
+                const btnDebloquer = userCard.querySelector('.btn-debloquer');
+                if (btnDebloquer) {
+                    const btnBloquer = document.createElement('button');
+                    btnBloquer.className = 'btn-bloquer pantin aulnay';
+                    btnBloquer.dataset.pseudo = pseudo;
+                    btnBloquer.textContent = 'Bloquer';
+                    btnDebloquer.replaceWith(btnBloquer);
+                }
+
+                // Mettre à jour le badge de statut
+                const badgeTemp = userCard.querySelector('.clamart-temp, .clamart-def');
+                if (badgeTemp && !userCard.querySelector('.clamart-vip')) {
+                    badgeTemp.textContent = 'Actif';
+                    badgeTemp.classList.remove('clamart-temp', 'clamart-def');
+                    badgeTemp.classList.add('clamart-actif');
+                }
+            }
+        }
+    }
+}
+
+// Initialiser quand le DOM est prêt
+document.addEventListener('DOMContentLoaded', () => {
+    window.gestionnaire = new GestionnaireUtilisateurs();
+});
